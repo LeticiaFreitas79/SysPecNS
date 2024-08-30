@@ -1,42 +1,38 @@
+using SysPecNSLib;
 namespace SysPecNSDesk
+
 {
-    public partial class Operacoes : Form
+    public partial class Form1 : Form
     {
-        public Operacoes()
+        public Form1()
         {
             InitializeComponent();
-        }
 
+        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Qualquer informação/função presente aqui será executada apenas após o formulário ser carregado.
+            // MessageBox.Show("Olá TI96");
         }
-
 
         private void btnConfirma_Click(object sender, EventArgs e)
         {
-
-            //int numero = int.Parse(txtNumero1.Text);
-            // int numero = convert.ToInt32(txtNumero.Text);
-            //for (int i = 0; i < 10; i++)
-            //{
-            //lstResultado.Items.Add($"{numero} x {i + 1} = {numero * i}");
-            //}
-
-
             string operacao = cmbOperacao.Text;
             int posicaoOperacao = cmbOperacao.SelectedIndex;
             double numero1 = 0;
+
             if (txtNumero1.Text != string.Empty)
             {
                 numero1 = Convert.ToDouble(txtNumero1.Text);
-
             }
+
             double numero2 = 0;
             if (posicaoOperacao < 5)
             {
-                numero2 = Convert.ToDouble(txtNumero2.Text);
+                if (txtNumero2.Text != string.Empty)
+                {
+                    numero2 = Convert.ToDouble(txtNumero2.Text);
+                }
             }
             double resultado = 0;
             switch (posicaoOperacao)
@@ -57,20 +53,27 @@ namespace SysPecNSDesk
                     resultado = Math.Pow(numero1, numero2);
                     break;
                 case 5:
-                    resultado = Math.Sqrt(numero2);
+                    resultado = Math.Sqrt(numero1);
                     break;
                 case 6:
-                    resultado = Math.Log(numero1);
+                    resultado = Math.Log10(numero1);
                     break;
                 default:
                     break;
             }
-            lstResultado.Items.Add($"{operacao} - {posicaoOperacao} = {resultado}"); //interpolação
+            lstResultado.Items.Add($"{operacao} - {posicaoOperacao} = {resultado}");
             txtNumero1.Clear();
             txtNumero2.Clear();
             cmbOperacao.Focus();
         }
 
+        private void txtNumero1_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNumero1.Text.Length > 0 && cmbOperacao.SelectedIndex > 4)
+            {
+                btnConfirma.Enabled = true;
+            }
+        }
 
         private void cmbOperacao_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -82,40 +85,30 @@ namespace SysPecNSDesk
             {
                 txtNumero2.Enabled = true;
             }
-
             txtNumero1.Clear();
             txtNumero2.Clear();
             txtNumero1.Focus();
-            BtnConfirma.Enabled = false;
+            btnConfirma.Enabled = false;
         }
 
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtNumero2_TextChanged(object sender, EventArgs e)
         {
             if (txtNumero2.Text.Length > 0)
             {
-                BtnConfirma.Enabled = true;
+                btnConfirma.Enabled = true;
             }
-            else { }
-        }
-
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtNumero1_TextChanged(object sender, EventArgs e)
-        {
-            if (txtNumero1.Text.Length > 0 && cmbOperacao.SelectedIndex> 4)
+            else
             {
-                BtnConfirma.Enabled = true;
+                btnConfirma.Enabled = false;
             }
         }
 
-        private void lstResultado_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            Nivel nivel = new Nivel(textBox1.Text,textBox2.Text);
+            nivel.Inserir();
+            MessageBox.Show("Nível gravado com sucesso!!!!!!");
+            button1.Enabled = false;
         }
     }
 }
