@@ -1,34 +1,42 @@
-﻿using System;
-using System.Data;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
+﻿using System; //
+using System.Data; //
+using System.Collections.Generic; //
+using System.Linq; //
+using System.Text; //
+using System.Threading.Tasks; //
+using System.Security.Cryptography; //
 
+//
 namespace SysPecNSLib
 {
     public class Usuario
     {
 
-        //Metodo Construtor
+        //Método Construtor.
+        // Inicializar as variaveis com os campos do banco de dados.
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Email { get; set; }
         public string? Senha { get; set; }
-        public Nivel Nivel { get; set; }
+        public Nivel Nivel { get; set; } // Campo com 'chave estrangeira' de outra classe.
         public bool Ativo { get; set; }
+        
+        // Para 'chamar' as informações de outra classe.
         public Usuario()
         {
             Nivel = new();
         }
-        public Usuario(string? nome, string? email, string? senha, Nivel nivel)
+
+        // Para inserir no banco de dados.
+        public Usuario(string? nome, string? email, string? senha, Nivel nivel) // Parametros.
         {
             Nome = nome;
             Email = email;
             Senha = senha;
             Nivel = nivel;
         }
+
+        // Sem ID
         public Usuario(string? nome, string? email, string? senha, Nivel nivel, bool ativo)
         {
             Nome = nome;
@@ -37,6 +45,8 @@ namespace SysPecNSLib
             Nivel = nivel;
             Ativo = ativo;
         }
+
+        // 
         public Usuario(int id, string? nome, string? email, string? senha, Nivel nivel, bool ativo)
         {
             Id = id;
@@ -46,6 +56,8 @@ namespace SysPecNSLib
             Nivel = nivel;
             Ativo = ativo;
         }
+
+        //
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -61,6 +73,8 @@ namespace SysPecNSLib
                 Id = dr.GetInt32(0);
             }
         }
+
+        //
         public static Usuario ObterPorId(int id)
         {
             Usuario usuario = new();
@@ -82,6 +96,8 @@ namespace SysPecNSLib
             }
             return usuario;
         }
+
+        //
         public static List<Usuario> ObterLista(string? nome="")
         {
             List<Usuario> Lista = new();
@@ -111,6 +127,8 @@ namespace SysPecNSLib
             }
             return Lista;
         }
+
+        //
         public static Usuario EfetuarLogin(string email, string senha)
         {
             Usuario usuario = new();
@@ -131,6 +149,8 @@ namespace SysPecNSLib
             }
             return usuario;
         }
+
+        //
         public void Atualizar()
         {
             //Usuario: nome, senha, nivel.
@@ -147,6 +167,8 @@ namespace SysPecNSLib
             cmd.Connection.Close();
 
         }
+
+        //
         public static void Arquivar(int id)
         {
             var cmd = Banco.Abrir();
@@ -155,6 +177,8 @@ namespace SysPecNSLib
             cmd.ExecuteNonQuery();
             cmd.Connection.Close();
         }
+
+        //
         public static void Restaurar (int id)
         {
             var cmd = Banco.Abrir();

@@ -1,11 +1,11 @@
-﻿using System; //
-using System.Data; //
-using System.Collections.Generic; //
-using System.Linq; //
-using System.Text; //
-using System.Threading.Tasks; //
-using System.Security.Cryptography; //
-using MySql.Data.MySqlClient; //
+﻿using System; 
+using System.Data; 
+using System.Collections.Generic; 
+using System.Linq; 
+using System.Text; 
+using System.Threading.Tasks; 
+using System.Security.Cryptography; 
+using MySql.Data.MySqlClient; 
 
 namespace SysPecNSLib
 {
@@ -20,7 +20,7 @@ namespace SysPecNSLib
         public string? Data_Nasc {get; set;}
         public string? Data_Cad {get; set;}
         public bool Ativo {get; set;}
-
+        public Cliente() { }
         //Todos os campos.
         public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, string? data_nasc, string? data_cad, bool ativo)
         {

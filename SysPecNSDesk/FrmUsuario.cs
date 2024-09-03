@@ -111,9 +111,7 @@ namespace SysPecNSDesk
         private void CarregaGrid(string nome = "")
         {
             //Preenchendo o DataGrid com os Usuários.
-            
             var Lista = Usuario.ObterLista(nome);
-            
             dgvUsuarios.Rows.Clear();
             int cont = 0;
             foreach (var usuario in Lista)
@@ -139,9 +137,9 @@ namespace SysPecNSDesk
                 || txtEmail.Text != string.Empty
                 || txtSenha.Text != string.Empty
                 || txtConfSenha.Text != string.Empty)
-            { 
-            return true;
-                }
+            {
+                return true;
+            }
             else
             {
                 return false;
@@ -149,6 +147,11 @@ namespace SysPecNSDesk
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbNivel_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

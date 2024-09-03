@@ -201,6 +201,7 @@
             cmbNivel.Name = "cmbNivel";
             cmbNivel.Size = new Size(157, 23);
             cmbNivel.TabIndex = 4;
+            cmbNivel.SelectedIndexChanged += cmbNivel_SelectedIndexChanged;
             // 
             // txtSenha
             // 
