@@ -79,7 +79,7 @@ namespace SysPecNSDesk
                 double.Parse(txtValorUnit.Text),
                 txtUnidadeVenda.Text,
                 Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
-                (int)dudEstoqueMinimo.Value,
+                (int)nudEstoqueMinimo.Value,
                 double.Parse(txtDesconto.Text)
                 );
             produto.Inserir(); //As informações são gravadas no Banco (?)
@@ -88,6 +88,70 @@ namespace SysPecNSDesk
                 MessageBox.Show($"Produto gravado com sucesso com o ID {produto.Id}");
                 FrmProduto_Load(sender, e);
             }
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            if (btnConsultar.Text == "&Consultar")
+            {
+                txtCodBar.Clear();
+                txtValorUnit.Clear();
+                txtUnidadeVenda.Clear();
+                txtDescricao.Clear();
+                txtDesconto.Clear();
+                nudEstoqueMinimo.Value = 0;
+                btnConsultar.Text = "&Obter por ID";
+                txtId.Focus();
+                txtId.ReadOnly = false;
+
+            }
+            else
+            {
+                if (txtId.Text.Length > 0)
+                {
+                    Produto produto = Produto.ObterPorId(int.Parse(txtId.Text));
+                    txtCodBar.Text = produto.CodBar;
+                    txtValorUnit.Text = Convert.ToString(produto.ValorUnit);
+                    txtDescricao.Text = produto.Descricao;
+                    txtDesconto.Text = produto.ClasseDesconto.ToString();
+                    txtUnidadeVenda.Text = produto.UnidadeVenda;
+                    //npEstoqueMinimo.Value = produto.EstoqueMinimo;
+                    cmbCategoria.SelectedIndex = cmbCategoria.FindString(produto.Categoria.Nome);
+                    btnEditar.Enabled = false;
+
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Produto produto = new(
+                int.Parse(txtId.Text),
+                txtCodBar.Text,
+                txtDescricao.Text,
+                double.Parse(txtValorUnit.Text),
+                txtUnidadeVenda.Text,
+                Categoria.ObterPorId(Convert.ToInt32(cmbCategoria.SelectedValue)),
+                (double)nudEstoqueMinimo.Value,
+                double.Parse(txtDesconto.Text),
+                null,
+                null
+                );
+            
+            produto.Atualizar(); //Grava as alterações no Banco de Dados.
+            MessageBox.Show($"Produto {produto.Descricao} atualizado com sucesso!");
+            btnEditar.Enabled = false;
+            txtId.ReadOnly = true;
+            btnConsultar.Text = "&Consultar";
+        }
+
+        private void LimpaControles()
+        {
+            txtCodBar.Clear();
+            txtValorUnit.Clear();
+            txtUnidadeVenda.Clear();
+            txtDescricao.Clear();
+            txtDesconto.Clear();
         }
     }
 }

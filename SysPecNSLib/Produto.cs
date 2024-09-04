@@ -19,7 +19,7 @@ namespace SysPecNSLib
         public double EstoqueMinimo { get; set; }
         public double ClasseDesconto { get; set; }
         public byte[]? Imagem { get; set; }
-        public DateTime DataCad { get; set; }
+        public DateTime? DataCad { get; set; }
             
         //Sem Id.
         public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime dataCad)
@@ -36,7 +36,7 @@ namespace SysPecNSLib
         }
 
         //Imagem.
-        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, DateTime dataCad)
+        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, DateTime? dataCad)
         {
             Id = id;
             CodBar = codBar;
@@ -50,7 +50,7 @@ namespace SysPecNSLib
         }
 
         //Sem Id e DataCad
-        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, byte[]? imagem, double classeDesconto, DateTime dataCad)
+        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, byte[]? imagem, double classeDesconto, DateTime? dataCad)
         {
             CodBar = codBar;
             Descricao = descricao;
@@ -75,7 +75,7 @@ namespace SysPecNSLib
         }
 
         //Todos os campos
-        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime dataCad)
+        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime? dataCad)
         {
             Id = Id;
             CodBar = codBar;
