@@ -66,7 +66,7 @@ namespace SysPecNSDesk
             var categorias = Categoria.ObterLista();
             cmbCategoria.DataSource = categorias;
             cmbCategoria.DisplayMember = "Nome";
-            cmbCategoria.ValueMember = "Sigla";
+            cmbCategoria.ValueMember = "Id";
 
             CarregaGrid();
         }

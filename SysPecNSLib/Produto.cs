@@ -167,7 +167,8 @@ namespace SysPecNSLib
                     Categoria.ObterPorId(dr.GetInt32(5)),
                     dr.GetDouble(6),
                     dr.GetDouble(7),
-                    (byte[])dr.GetValue(8), //alternativa ao null.
+                    //(byte[])dr.GetValue(8), //alternativa ao null.
+                    null,
                     dr.GetDateTime(9)
                     ));
             }

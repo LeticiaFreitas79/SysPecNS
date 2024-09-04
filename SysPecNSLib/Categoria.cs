@@ -54,7 +54,7 @@ namespace SysPecNSLib
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                categoria = new(dr.GetInt32(0), dr.GetString(1), dr.GetString(2));
+                categoria = new(dr.GetInt32(0), dr.GetString(1), null);
             }
             return categoria;
         }
@@ -62,11 +62,11 @@ namespace SysPecNSLib
         {
             List<Categoria> categorias = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = "select * from categorias where id = {id}";
+            cmd.CommandText = "select * from categorias";
             var dr = cmd.ExecuteReader();
             while (dr.Read()) //while deve ser usado em listas.
             {
-                categorias.Add(new(dr.GetInt32(0), dr.GetString(1), dr.GetString(2)));
+                categorias.Add(new(dr.GetInt32(0), dr.GetString(1), null));
             }
             return categorias;
         }
