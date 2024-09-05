@@ -22,13 +22,13 @@ namespace SysPecNSLib
         public DateTime? DataCad { get; set; }
             
         //Sem Id.
-        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime dataCad)
+        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime dataCad)
         {
             CodBar = codBar;
             Descricao = descricao;
             ValorUnit = valorUnit;
             UnidadeVenda = unidadeVenda;
-            Categoria = Categoria;
+            Categoria = categoria;
             EstoqueMinimo = estoqueMinimo;
             ClasseDesconto = classeDesconto;
             Imagem = imagem;
@@ -36,53 +36,53 @@ namespace SysPecNSLib
         }
 
         //Imagem.
-        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, DateTime? dataCad)
+        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto, DateTime? dataCad)
         {
             Id = id;
             CodBar = codBar;
             Descricao = descricao;
             ValorUnit = valorUnit;
             UnidadeVenda = unidadeVenda;
-            Categoria = Categoria;
+            Categoria = categoria;
             EstoqueMinimo = estoqueMinimo;
             ClasseDesconto = classeDesconto;
             DataCad = dataCad;
         }
 
         //Sem Id e DataCad
-        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, byte[]? imagem, double classeDesconto, DateTime? dataCad)
+        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, byte[]? imagem, double classeDesconto, DateTime? dataCad)
         {
             CodBar = codBar;
             Descricao = descricao;
             ValorUnit = valorUnit;
             UnidadeVenda = unidadeVenda;
-            Categoria = Categoria;
+            Categoria = categoria;
             EstoqueMinimo = estoqueMinimo;
             ClasseDesconto = classeDesconto;
             Imagem = imagem;
         }
 
         //Sem id, Imagem e DataCad
-        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto)
+        public Produto(string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto)
         {
             CodBar = codBar;
             Descricao = descricao;
             ValorUnit = valorUnit;
             UnidadeVenda = unidadeVenda;
-            this.Categoria = Categoria;
+            this.Categoria = categoria;
             EstoqueMinimo = estoqueMinimo;
             ClasseDesconto = classeDesconto;        
         }
 
         //Todos os campos
-        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? Categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime? dataCad)
+        public Produto(int id, string? codBar, string? descricao, double valorUnit, string? unidadeVenda, Categoria? categoria, double estoqueMinimo, double classeDesconto, byte[]? imagem, DateTime? dataCad)
         {
             Id = Id;
             CodBar = codBar;
             Descricao = descricao;
             ValorUnit = valorUnit;
             UnidadeVenda = unidadeVenda;
-            Categoria = Categoria;
+            Categoria = categoria;
             EstoqueMinimo = estoqueMinimo;
             ClasseDesconto = classeDesconto;
             Imagem = imagem;
@@ -126,7 +126,7 @@ namespace SysPecNSLib
             cmd.ExecuteNonQuery();
         }
 
-        public static Produto ObterPorId(int id)
+        public static Produto ObterPorId(int id) //Serve para consultar um produto por ser ID
         {
             Produto produto = new(); //É necessário um método construtor vazio para que essa função funcione.
             var cmd = Banco.Abrir();
@@ -150,7 +150,7 @@ namespace SysPecNSLib
             return produto;
         }   
             
-        public static List<Produto> ObterLista()
+        public static List<Produto> ObterLista() //Serve para retornar uma lista com todos os dados da tabela.
         {   
             List<Produto> produtos = new(); //É necessário um método construtor vazio para que essa função funcione
             var cmd = Banco.Abrir();

@@ -73,6 +73,16 @@ namespace SysPecNSDesk.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AdItem2 {
+            get {
+                object obj = ResourceManager.GetObject("AdItem2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap arara {
             get {
                 object obj = ResourceManager.GetObject("arara", resourceCulture);
@@ -196,6 +206,26 @@ namespace SysPecNSDesk.Properties {
         internal static System.Drawing.Bitmap pexels_sam_lion_5733422 {
             get {
                 object obj = ResourceManager.GetObject("pexels-sam-lion-5733422", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Search {
+            get {
+                object obj = ResourceManager.GetObject("Search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wi0063_48 {
+            get {
+                object obj = ResourceManager.GetObject("wi0063-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

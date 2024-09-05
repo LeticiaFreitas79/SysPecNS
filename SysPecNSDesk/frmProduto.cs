@@ -72,8 +72,7 @@ namespace SysPecNSDesk
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
-        {
-            Produto produto = new(
+        {Produto produto = new(
                 txtCodBar.Text,
                 txtDescricao.Text,
                 double.Parse(txtValorUnit.Text),
@@ -87,6 +86,7 @@ namespace SysPecNSDesk
             {
                 MessageBox.Show($"Produto gravado com sucesso com o ID {produto.Id}");
                 FrmProduto_Load(sender, e);
+            
             }
         }
 

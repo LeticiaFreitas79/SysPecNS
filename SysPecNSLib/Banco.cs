@@ -25,7 +25,7 @@ namespace SysPecNSLib
             MySqlCommand cmd = new MySqlCommand();
             try // tratamento de excessão
             {
-                cn.Open();
+                cn.Open(); //se não funcionar, significa que o banco não está ligado.
                 cmd.Connection = cn;
             }
             catch (Exception)

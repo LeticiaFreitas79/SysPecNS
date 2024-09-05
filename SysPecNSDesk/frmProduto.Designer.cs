@@ -151,7 +151,8 @@
             dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { clnId, clnCodBar, clnDescricao, clnValorUnit, clnUnidadeVenda, clnCategoria, clnEstoqueMinimo, clnDesconto, clnDataCad });
             dgvProdutos.Location = new Point(54, 473);
             dgvProdutos.Name = "dgvProdutos";
-            dgvProdutos.Size = new Size(794, 150);
+            dgvProdutos.RowHeadersVisible = false;
+            dgvProdutos.Size = new Size(753, 150);
             dgvProdutos.TabIndex = 11;
             dgvProdutos.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -312,7 +313,7 @@
             // 
             nudEstoqueMinimo.Location = new Point(319, 167);
             nudEstoqueMinimo.Name = "nudEstoqueMinimo";
-            nudEstoqueMinimo.Size = new Size(120, 23);
+            nudEstoqueMinimo.Size = new Size(101, 23);
             nudEstoqueMinimo.TabIndex = 21;
             // 
             // FrmProduto
