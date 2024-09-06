@@ -1,10 +1,14 @@
+using SysPecNSLib;
+
 namespace SysPecNSDesk
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static Usuario UsuarioLogado = new(); //Propriedade estatica do tipo usuário.
+        //uma classe estática só pode ter membros estáticos.
+
+    
+        ///  The main entry point for the application.   
         [STAThread]
         static void Main()
         {

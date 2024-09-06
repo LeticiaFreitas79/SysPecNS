@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace SysPecNSDesk
+﻿namespace SysPecNSDesk
 {
     public partial class FrmPrincipal : Form
     {
@@ -19,7 +9,12 @@ namespace SysPecNSDesk
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            //Para impedir que o usuário feche a tela de login.
+            FrmLogin frmLogin = new();
+            //frmLogin.MdiParent = this;
+            frmLogin.ShowDialog();
+            Text += $"({Program.UsuarioLogado.Email})"; //Junta o que já está no text com as novas informações. Serve para que não seja necessário reescrever.
+            toolStripStatusLabel1.Text = $"{Program.UsuarioLogado.Nome} - {Program.UsuarioLogado.Nivel.Nome}";
         }
 
         private void novoToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -37,7 +32,7 @@ namespace SysPecNSDesk
         {
             //Confirmação de saída do sistema.
             var msg = MessageBox.Show("Deseja sair?", "Confirmação de saída", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (msg == DialogResult.Yes) Application.Exit(); //As chaves não não necessárias quando existe apenas uma instrução.
+            if (msg == DialogResult.Yes) Application.Exit(); //As chaves {} não não necessárias quando existe apenas uma instrução.
         }
 
         private void novoToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -47,6 +42,14 @@ namespace SysPecNSDesk
             frmProduto.MdiParent = this;
             //Formas de Exibir.
             frmProduto.Show();
+        }
+
+        private void fornecedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFornecedor frmFornecedor = new();
+            frmFornecedor.MdiParent = this;
+            //Formas de Exibir.
+            frmFornecedor.Show();
         }
     }
 }

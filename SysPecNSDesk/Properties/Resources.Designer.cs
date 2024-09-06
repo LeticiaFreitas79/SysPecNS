@@ -193,6 +193,16 @@ namespace SysPecNSDesk.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pexels_nelson_donizeti_3817951_5659662 {
+            get {
+                object obj = ResourceManager.GetObject("pexels-nelson-donizeti-3817951-5659662", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pexels_pixabay_57416 {
             get {
                 object obj = ResourceManager.GetObject("pexels-pixabay-57416", resourceCulture);

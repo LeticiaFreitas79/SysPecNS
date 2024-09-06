@@ -124,9 +124,6 @@
   <data name="periquito" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\periquito.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wi0063-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wi0063-48.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pexels-kyle-collins-356093-969224" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-kyle-collins-356093-969224.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,11 +133,14 @@
   <data name="pexels-eylulkusdili-10646121" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-eylulkusdili-10646121.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pexels-sam-lion-5733422" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-sam-lion-5733422.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arara" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arara.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="wi0063-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wi0063-48.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,17 +148,20 @@
   <data name="pexels-pixabay-57416" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-pixabay-57416.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gato4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gato4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pexels-b3stography-988551" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-b3stography-988551.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pexels-sam-lion-5733422" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pexels-sam-lion-5733422.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arara" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arara.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gato4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gato4.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AdItem2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AdItem2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,7 +169,7 @@
   <data name="Edit Alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit Alt.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pexels-nelson-donizeti-3817951-5659662" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pexels-nelson-donizeti-3817951-5659662.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

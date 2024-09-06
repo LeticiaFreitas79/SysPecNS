@@ -256,7 +256,7 @@
             btnAdd.Text = "Adicionar";
             btnAdd.TextAlign = ContentAlignment.MiddleRight;
             btnAdd.UseVisualStyleBackColor = true;
-            using btnAdd.Click += btnAdd;
+            //using btnAdd.Click += btnAdd;
             // 
             // btnEdit
             // 
