@@ -80,7 +80,10 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "sp_itempedido_update";
-            cmd.Parameters.AddWithValue("spid",);
+            cmd.Parameters.AddWithValue("spid", Id);
+            cmd.Parameters.AddWithValue("spquantidade", Quantidade);
+            cmd.Parameters.AddWithValue("spdesconto", Desconto);
+            cmd.ExecuteNonQuery();
         }
     }
 }

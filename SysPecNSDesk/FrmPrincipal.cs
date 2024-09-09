@@ -51,5 +51,16 @@
             //Formas de Exibir.
             frmFornecedor.Show();
         }
+
+        private void pedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            FrmPedidoNovo frmPedidoNovo = new FrmPedidoNovo();
+
+        }
     }
 }
