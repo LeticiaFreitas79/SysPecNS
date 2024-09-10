@@ -108,6 +108,31 @@ namespace SysPecNSDesk
             txtQuantidade.Text = "1";
             txtCodBar.Clear();
             txtCodBar.Focus();
+
+            PreencherGridItens();
+        }
+
+        private void PreencherGridItens()
+        {
+            var itens = ItemPedido.ObterListaPorPedido(int.Parse(txtIdPedido.Text));
+            dgvItensPedido.Rows.Clear();
+            int linha = 0;
+            double total = 0;
+            foreach (var item in itens)
+            {
+                dgvItensPedido.Rows.Add();
+                dgvItensPedido.Rows[linha].Cells[0].Value = item.Id;
+                dgvItensPedido.Rows[linha].Cells[1].Value = item.Produto.CodBar;
+                dgvItensPedido.Rows[linha].Cells[2].Value = item.Produto.Descricao;
+                dgvItensPedido.Rows[linha].Cells[3].Value = item.ValorUnit;
+                dgvItensPedido.Rows[linha].Cells[4].Value = item.Quantidade;
+                dgvItensPedido.Rows[linha].Cells[5].Value = item.Desconto;
+                dgvItensPedido.Rows[linha].Cells[6].Value = item.ValorUnit * item.Quantidade - item.Desconto;
+                linha++;
+                total += item.ValorUnit * item.Quantidade - item.Desconto;
+            }
+            txtTotal.Text = total.ToString();
+           
         }
     }
 }
