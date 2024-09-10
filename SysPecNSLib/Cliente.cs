@@ -12,19 +12,19 @@ namespace SysPecNSLib
     public class Cliente
     {
         //Metódo Construtor.
-        public int ID {get; set;}
+        public int Id {get; set;}
         public string? Nome {get; set;}
         public string? CPF { get; set;}
         public string? Telefone {get; set;}
         public string? Email { get; set;}
-        public string? Data_Nasc {get; set;}
-        public string? Data_Cad {get; set;}
+        public DateTime? Data_Nasc {get; set;}
+        public DateTime? Data_Cad {get; set;}
         public bool Ativo {get; set;}
-        public Cliente() { }
+        
         //Todos os campos.
-        public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, string? data_nasc, string? data_cad, bool ativo)
+        public Cliente(int id, string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad, bool ativo)
         {
-            ID = id;
+            Id = id;
             Nome = nome;
             CPF = cpf;
             Telefone = telefone;
@@ -35,7 +35,7 @@ namespace SysPecNSLib
         }
 
         //Sem ID.
-        public Cliente(string? nome, string? cpf, string? telefone, string? email, string? data_nasc, string? data_cad, bool ativo)
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad, bool ativo)
         {
             Nome = nome;
             CPF = cpf;
@@ -47,7 +47,7 @@ namespace SysPecNSLib
         }
 
         //Sem ID e Ativo.
-        public Cliente(string? nome, string? cpf, string? telefone, string? email, string? data_nasc, string? data_cad)
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc, DateTime? data_cad)
         {
             Nome = nome;
             CPF = cpf;
@@ -57,7 +57,13 @@ namespace SysPecNSLib
             Data_Cad = data_cad;
         }
 
-        //
+        //Vazio
+        public Cliente()
+        {
+
+        }
+
+        //Inserir no Banco de Dados.
         public void Inserir()
         {
             var cmd = Banco.Abrir();
@@ -67,16 +73,15 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
             cmd.Parameters.AddWithValue("spemail", Email);
-            cmd.Parameters.AddWithValue("spdata_nasc", Data_Nasc);
-            cmd.Parameters.AddWithValue("spdata_cad", Data_Cad);
+            cmd.Parameters.AddWithValue("spdata_nasc", Data_Nasc);            
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                ID = dr.GetInt32(0);
+                Id = dr.GetInt32(0);
             }
 
         }
-        //
+        //Consultar clientes por Id.
         public static Cliente ObterPorId(int id)
         {
             Cliente cliente = new();
@@ -84,12 +89,88 @@ namespace SysPecNSLib
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = $"select * from cliente where id = {id}";
             var dr = cmd.ExecuteReader();
-            while (dr.Read())
+            if (dr.Read())
             {
-              
+                cliente = new(
+                    dr.GetInt32(0), //id.
+                    dr.GetString(1), //nome.
+                    dr.GetString(2), //cpf.
+                    dr.GetString(3), //telefone.
+                    dr.GetString(4), //email.
+                    dr.GetDateTime(5), //data_nasc
+                    dr.GetDateTime(6), //data_cad
+                    dr.GetBoolean(7) //ativo
+                    );
             }
             return cliente;
         }
 
+        //Consultar por Lista.
+        public static List<Cliente> ObterLista(string? nome = "")
+        {
+            List<Cliente> lista = new();
+            var comandosSQL = Banco.Abrir();
+            comandosSQL.CommandType = CommandType.Text;
+            if (nome == "")
+            {
+                comandosSQL.CommandText = "select * from clientes order by nome";
+            }
+            else
+            {
+                comandosSQL.CommandText = $"select * from clientes where nome like '%{nome}%' order by nome";
+            }
+
+            var dr = comandosSQL.ExecuteReader();
+            while (dr.Read())
+            {
+                lista.Add(new(
+                   dr.GetInt32(0),//id
+                   dr.GetString(1),//nome
+                   dr.GetString(2),//cpf
+                   dr.GetString(3),//telefone
+                   dr.GetString(4),//email
+                   dr.GetDateTime(5),//data_Nasc
+                   dr.GetDateTime(6),//data_Cad
+                   dr.GetBoolean(7)//ativo
+                    )
+
+               );
+            }
+                return lista;
+        }
+
+        //Atualiza cliente já cadastrado no sistema.
+        public void Atualizar()
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "sp_cliente_update";
+            cmd.Parameters.AddWithValue("spid", Id);
+            cmd.Parameters.AddWithValue("spnome", Nome);
+            cmd.Parameters.AddWithValue("sptelefone", Telefone);
+            cmd.Parameters.AddWithValue("spdatanasc", Data_Nasc);
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
+        }
+
+        //Arquiva cliente já cadastrado no sistema.
+        public static void Arquivar(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update clientes set ativo = 0 where id = {id}";
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
+        }
+
+        //Restaura cliente 'excluido' do sistema.
+        public static void Restaurar(int id)
+        {
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = $"update clientes set ativo = 1 where id = {id}";
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
+        }
     }
 }

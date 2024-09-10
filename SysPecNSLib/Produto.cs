@@ -125,12 +125,35 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spclasse_desconto", ClasseDesconto);
             cmd.ExecuteNonQuery();
         }
-
         public static Produto ObterPorId(int id) //Serve para consultar um produto por ser ID
         {
             Produto produto = new(); //É necessário um método construtor vazio para que essa função funcione.
             var cmd = Banco.Abrir();
             cmd.CommandText = $"select * from produtos where id = {id}";
+            var dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                produto = new(
+                    dr.GetInt32(0),
+                    dr.GetString(1),
+                    dr.GetString(2),
+                    dr.GetDouble(3),
+                    dr.GetString(4),
+                    Categoria.ObterPorId(dr.GetInt32(5)),
+                    dr.GetDouble(6),
+                    dr.GetDouble(7),
+                    null,
+                    dr.GetDateTime(9)
+                    );
+            }
+            return produto;
+        }
+
+        public static Produto ObterPorId(string id) //Serve para consultar um produto por ser ID
+        {
+            Produto produto = new(); //É necessário um método construtor vazio para que essa função funcione.
+            var cmd = Banco.Abrir();
+            cmd.CommandText = $"select * from produtos where cod_bar = '{id}'";
             var dr = cmd.ExecuteReader();
             while (dr.Read()) 
             {

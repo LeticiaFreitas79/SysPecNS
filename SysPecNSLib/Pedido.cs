@@ -57,7 +57,7 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "sp.pedido_insert";
-            cmd.Parameters.AddWithValue("spcliente_id", Cliente.ID);
+            cmd.Parameters.AddWithValue("spcliente_id", Cliente.Id);
             cmd.Parameters.AddWithValue("usuario_id", Usuario.Id);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
 
