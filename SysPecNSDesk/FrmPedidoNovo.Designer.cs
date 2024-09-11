@@ -52,13 +52,6 @@
             txtTotalPedido = new TextBox();
             lblTotal = new Label();
             dgvItensPedido = new DataGridView();
-            clnSeq = new DataGridViewTextBoxColumn();
-            clnCodBar = new DataGridViewTextBoxColumn();
-            clnDescricao = new DataGridViewTextBoxColumn();
-            clnValorUnit = new DataGridViewTextBoxColumn();
-            clnQuantidade = new DataGridViewTextBoxColumn();
-            clnDescontoItem = new DataGridViewTextBoxColumn();
-            clnTotalItem = new DataGridViewTextBoxColumn();
             label6 = new Label();
             lblQuantidade = new Label();
             lblValorUnit = new Label();
@@ -74,6 +67,13 @@
             txtIdPedido = new TextBox();
             lblNumero = new Label();
             pbImagem = new PictureBox();
+            clnSeq = new DataGridViewTextBoxColumn();
+            clnCodBar = new DataGridViewTextBoxColumn();
+            clnDescricao = new DataGridViewTextBoxColumn();
+            clnValorUnit = new DataGridViewTextBoxColumn();
+            clnQuantidade = new DataGridViewTextBoxColumn();
+            clnDescontoItem = new DataGridViewTextBoxColumn();
+            clnTotalItem = new DataGridViewTextBoxColumn();
             grbIdentificacao.SuspendLayout();
             grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).BeginInit();
@@ -152,33 +152,22 @@
             // 
             // grbItens
             // 
-            grbItens.Controls.Add(label10);
-            grbItens.Controls.Add(label9);
-            grbItens.Controls.Add(label8);
-            grbItens.Controls.Add(label7);
-            grbItens.Controls.Add(txtTotal);
-            grbItens.Controls.Add(txtDescontoPedido);
-            grbItens.Controls.Add(txtDescontoItem);
-            grbItens.Controls.Add(txtSubTotal);
-            grbItens.Controls.Add(btnFechar);
-            grbItens.Controls.Add(txtTotalPedido);
-            grbItens.Controls.Add(lblTotal);
+            grbItens.Controls.Add(txtDesconto);
+            grbItens.Controls.Add(txtValorUnit);
+            grbItens.Controls.Add(txtQuantidade);
+            grbItens.Controls.Add(txtDescricao);
+            grbItens.Controls.Add(txtCodBar);
             grbItens.Controls.Add(dgvItensPedido);
             grbItens.Controls.Add(label6);
             grbItens.Controls.Add(lblQuantidade);
             grbItens.Controls.Add(lblValorUnit);
             grbItens.Controls.Add(lblDescricao);
             grbItens.Controls.Add(lblCodBar);
-            grbItens.Controls.Add(txtDesconto);
-            grbItens.Controls.Add(txtValorUnit);
-            grbItens.Controls.Add(txtQuantidade);
-            grbItens.Controls.Add(txtDescricao);
-            grbItens.Controls.Add(txtCodBar);
             grbItens.Controls.Add(btnAdicionar);
             grbItens.Font = new Font("Geometr212 BkCn BT", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grbItens.Location = new Point(23, 253);
             grbItens.Name = "grbItens";
-            grbItens.Size = new Size(754, 478);
+            grbItens.Size = new Size(754, 379);
             grbItens.TabIndex = 1;
             grbItens.TabStop = false;
             grbItens.Text = "Itens do Pedido";
@@ -187,7 +176,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(541, 388);
+            label10.Location = new Point(564, 645);
             label10.Name = "label10";
             label10.Size = new Size(34, 14);
             label10.TabIndex = 22;
@@ -197,7 +186,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(422, 388);
+            label9.Location = new Point(445, 645);
             label9.Name = "label9";
             label9.Size = new Size(57, 14);
             label9.TabIndex = 21;
@@ -207,7 +196,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(303, 388);
+            label8.Location = new Point(326, 645);
             label8.Name = "label8";
             label8.Size = new Size(87, 14);
             label8.TabIndex = 20;
@@ -217,7 +206,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(184, 388);
+            label7.Location = new Point(207, 645);
             label7.Name = "label7";
             label7.Size = new Size(58, 14);
             label7.TabIndex = 19;
@@ -225,40 +214,40 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(541, 404);
+            txtTotal.Location = new Point(564, 661);
             txtTotal.Name = "txtTotal";
             txtTotal.ReadOnly = true;
-            txtTotal.Size = new Size(105, 31);
+            txtTotal.Size = new Size(105, 23);
             txtTotal.TabIndex = 18;
             txtTotal.TextChanged += textBox6_TextChanged;
             // 
             // txtDescontoPedido
             // 
-            txtDescontoPedido.Location = new Point(422, 405);
+            txtDescontoPedido.Location = new Point(445, 662);
             txtDescontoPedido.Name = "txtDescontoPedido";
-            txtDescontoPedido.Size = new Size(105, 31);
+            txtDescontoPedido.Size = new Size(105, 23);
             txtDescontoPedido.TabIndex = 17;
             // 
             // txtDescontoItem
             // 
-            txtDescontoItem.Location = new Point(303, 405);
+            txtDescontoItem.Location = new Point(326, 662);
             txtDescontoItem.Name = "txtDescontoItem";
             txtDescontoItem.ReadOnly = true;
-            txtDescontoItem.Size = new Size(105, 31);
+            txtDescontoItem.Size = new Size(105, 23);
             txtDescontoItem.TabIndex = 16;
             // 
             // txtSubTotal
             // 
-            txtSubTotal.Location = new Point(184, 405);
+            txtSubTotal.Location = new Point(207, 662);
             txtSubTotal.Name = "txtSubTotal";
             txtSubTotal.ReadOnly = true;
-            txtSubTotal.Size = new Size(105, 31);
+            txtSubTotal.Size = new Size(105, 23);
             txtSubTotal.TabIndex = 15;
             // 
             // btnFechar
             // 
             btnFechar.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnFechar.Location = new Point(653, 404);
+            btnFechar.Location = new Point(676, 661);
             btnFechar.Name = "btnFechar";
             btnFechar.Size = new Size(75, 32);
             btnFechar.TabIndex = 14;
@@ -267,17 +256,17 @@
             // 
             // txtTotalPedido
             // 
-            txtTotalPedido.Location = new Point(20, 405);
+            txtTotalPedido.Location = new Point(43, 662);
             txtTotalPedido.Name = "txtTotalPedido";
             txtTotalPedido.ReadOnly = true;
-            txtTotalPedido.Size = new Size(150, 31);
+            txtTotalPedido.Size = new Size(150, 23);
             txtTotalPedido.TabIndex = 13;
             // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
             lblTotal.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTotal.Location = new Point(20, 388);
+            lblTotal.Location = new Point(43, 645);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(90, 14);
             lblTotal.TabIndex = 12;
@@ -298,71 +287,18 @@
             dgvItensPedido.Columns.AddRange(new DataGridViewColumn[] { clnSeq, clnCodBar, clnDescricao, clnValorUnit, clnQuantidade, clnDescontoItem, clnTotalItem });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvItensPedido.DefaultCellStyle = dataGridViewCellStyle3;
             dgvItensPedido.GridColor = Color.LightCoral;
-            dgvItensPedido.Location = new Point(20, 117);
+            dgvItensPedido.Location = new Point(20, 109);
             dgvItensPedido.Name = "dgvItensPedido";
             dgvItensPedido.ReadOnly = true;
             dgvItensPedido.Size = new Size(708, 247);
             dgvItensPedido.TabIndex = 11;
-            // 
-            // clnSeq
-            // 
-            clnSeq.Frozen = true;
-            clnSeq.HeaderText = "#SEQ";
-            clnSeq.Name = "clnSeq";
-            clnSeq.ReadOnly = true;
-            clnSeq.Width = 40;
-            // 
-            // clnCodBar
-            // 
-            clnCodBar.Frozen = true;
-            clnCodBar.HeaderText = "Cód. Barras";
-            clnCodBar.Name = "clnCodBar";
-            clnCodBar.ReadOnly = true;
-            clnCodBar.Width = 80;
-            // 
-            // clnDescricao
-            // 
-            clnDescricao.Frozen = true;
-            clnDescricao.HeaderText = "Descrição";
-            clnDescricao.Name = "clnDescricao";
-            clnDescricao.ReadOnly = true;
-            clnDescricao.Width = 200;
-            // 
-            // clnValorUnit
-            // 
-            clnValorUnit.HeaderText = "Valor Unit.";
-            clnValorUnit.Name = "clnValorUnit";
-            clnValorUnit.ReadOnly = true;
-            clnValorUnit.Width = 80;
-            // 
-            // clnQuantidade
-            // 
-            clnQuantidade.HeaderText = "Quantidade";
-            clnQuantidade.Name = "clnQuantidade";
-            clnQuantidade.ReadOnly = true;
-            clnQuantidade.Width = 70;
-            // 
-            // clnDescontoItem
-            // 
-            clnDescontoItem.HeaderText = "Desconto Item";
-            clnDescontoItem.Name = "clnDescontoItem";
-            clnDescontoItem.ReadOnly = true;
-            clnDescontoItem.Width = 60;
-            // 
-            // clnTotalItem
-            // 
-            dataGridViewCellStyle2.Font = new Font("MS Outlook", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 2);
-            clnTotalItem.DefaultCellStyle = dataGridViewCellStyle2;
-            clnTotalItem.HeaderText = "Total";
-            clnTotalItem.Name = "clnTotalItem";
-            clnTotalItem.ReadOnly = true;
             // 
             // label6
             // 
@@ -503,18 +439,83 @@
             pbImagem.TabIndex = 5;
             pbImagem.TabStop = false;
             // 
+            // clnSeq
+            // 
+            clnSeq.FillWeight = 20F;
+            clnSeq.Frozen = true;
+            clnSeq.HeaderText = "#SEQ";
+            clnSeq.Name = "clnSeq";
+            clnSeq.ReadOnly = true;
+            clnSeq.Width = 40;
+            // 
+            // clnCodBar
+            // 
+            clnCodBar.Frozen = true;
+            clnCodBar.HeaderText = "Cód. Barras";
+            clnCodBar.Name = "clnCodBar";
+            clnCodBar.ReadOnly = true;
+            clnCodBar.Width = 80;
+            // 
+            // clnDescricao
+            // 
+            clnDescricao.Frozen = true;
+            clnDescricao.HeaderText = "Descrição";
+            clnDescricao.Name = "clnDescricao";
+            clnDescricao.ReadOnly = true;
+            clnDescricao.Width = 200;
+            // 
+            // clnValorUnit
+            // 
+            clnValorUnit.HeaderText = "Valor Unit.";
+            clnValorUnit.Name = "clnValorUnit";
+            clnValorUnit.ReadOnly = true;
+            clnValorUnit.Width = 80;
+            // 
+            // clnQuantidade
+            // 
+            clnQuantidade.HeaderText = "Quantidade";
+            clnQuantidade.Name = "clnQuantidade";
+            clnQuantidade.ReadOnly = true;
+            clnQuantidade.Width = 70;
+            // 
+            // clnDescontoItem
+            // 
+            clnDescontoItem.HeaderText = "Desconto Item";
+            clnDescontoItem.Name = "clnDescontoItem";
+            clnDescontoItem.ReadOnly = true;
+            clnDescontoItem.Width = 60;
+            // 
+            // clnTotalItem
+            // 
+            dataGridViewCellStyle2.Font = new Font("MS Outlook", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 2);
+            clnTotalItem.DefaultCellStyle = dataGridViewCellStyle2;
+            clnTotalItem.HeaderText = "Total";
+            clnTotalItem.Name = "clnTotalItem";
+            clnTotalItem.ReadOnly = true;
+            // 
             // FrmPedidoNovo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RosyBrown;
-            ClientSize = new Size(802, 743);
+            ClientSize = new Size(802, 709);
             Controls.Add(pbImagem);
             Controls.Add(lblNumero);
             Controls.Add(txtIdPedido);
             Controls.Add(lblNovoPedido);
             Controls.Add(grbItens);
+            Controls.Add(label10);
             Controls.Add(grbIdentificacao);
+            Controls.Add(label9);
+            Controls.Add(btnFechar);
+            Controls.Add(label8);
+            Controls.Add(lblTotal);
+            Controls.Add(label7);
+            Controls.Add(txtTotalPedido);
+            Controls.Add(txtTotal);
+            Controls.Add(txtSubTotal);
+            Controls.Add(txtDescontoPedido);
+            Controls.Add(txtDescontoItem);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPedidoNovo";
             Text = "SysPec | Novo Pedido";
