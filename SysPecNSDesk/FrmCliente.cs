@@ -120,6 +120,63 @@ namespace SysPecNSDesk
 
         }
 
+        private void btnSalvar_Click_1(object sender, EventArgs e)
+        {
+            //Cria um novo objeto cliente
+            Endereco endereco = new(
+                Cliente.ObterPorId(ClienteId),
+                txtCep.Text,
+                txtLogradouro.Text,
+                txtNumero.Text,
+                txtComplemento.Text,
+                txtBairro.Text,
+                txtCidade.Text,
+                txtUf.Text,
+                cmbTipoEndereco.Text
+
+
+
+               );
+
+            endereco.Inserir();
+            if (endereco.Id > 0)
+            {
+                //Exibe ID do cliente no formulário, enquanto a caixa de diálogo não for fechada.
+
+                MessageBox.Show($"O endereço foi inserido com sucesso, no cadastro do usuário {endereco.Cliente.Nome}");
+
+                txtCep.Clear();
+                txtLogradouro.Clear();
+                txtNumero.Clear();
+                txtComplemento.Clear();
+                txtBairro.Clear();
+                txtCidade.Clear();
+                txtUf.Clear();
+
+                btnAdicionar.Enabled = true;
+
+                btnSalvar.Enabled = false;
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Falha ao cadastrar o endereço no sistema.");
+            }
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCadastrarEndereco_Click_1(object sender, EventArgs e)
+        {
+            this.tabCliente.SelectedTab = TabPageEndereco;
+            ClienteId = int.Parse(txtId.Text);
+        }
+
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
             btnSalvar.Enabled = true;
@@ -150,11 +207,6 @@ namespace SysPecNSDesk
 
 
               );
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

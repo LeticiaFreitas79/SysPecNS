@@ -147,6 +147,7 @@
             // 
             // dgvProdutos
             // 
+            dgvProdutos.BackgroundColor = Color.LightSteelBlue;
             dgvProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProdutos.Columns.AddRange(new DataGridViewColumn[] { clnId, clnCodBar, clnDescricao, clnValorUnit, clnUnidadeVenda, clnCategoria, clnEstoqueMinimo, clnDesconto, clnDataCad });
             dgvProdutos.Location = new Point(54, 473);
@@ -320,6 +321,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(892, 661);
             Controls.Add(nudEstoqueMinimo);
             Controls.Add(btnConsultar);

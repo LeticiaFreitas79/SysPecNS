@@ -62,5 +62,13 @@
             FrmPedidoNovo frmPedidoNovo = new FrmPedidoNovo();
 
         }
+
+        private void novoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new();
+            frmCliente.MdiParent = this;
+            //Formas de Exibir.
+            frmCliente.Show();
+        }
     }
 }

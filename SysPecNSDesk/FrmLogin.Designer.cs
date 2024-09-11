@@ -54,6 +54,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(243, 23);
             txtEmail.TabIndex = 1;
+            txtEmail.Text = "paulo@gmail.com";
             // 
             // txtSenha
             // 
@@ -61,6 +62,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(243, 23);
             txtSenha.TabIndex = 2;
+            txtSenha.Text = "123456";
             txtSenha.UseSystemPasswordChar = true;
             // 
             // btnEntrar
@@ -108,7 +110,7 @@
             AcceptButton = btnEntrar;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.RosyBrown;
+            BackColor = Color.LightSlateGray;
             CancelButton = btnCancelar;
             ClientSize = new Size(302, 260);
             ControlBox = false;

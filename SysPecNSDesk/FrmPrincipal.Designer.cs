@@ -43,12 +43,12 @@
             movimentoToolStripMenuItem = new ToolStripMenuItem();
             pedidoToolStripMenuItem = new ToolStripMenuItem();
             novoToolStripMenuItem3 = new ToolStripMenuItem();
+            listaDePedidosToolStripMenuItem = new ToolStripMenuItem();
             operaToolStripMenuItem = new ToolStripMenuItem();
             caixaToolStripMenuItem = new ToolStripMenuItem();
             sairToolStripMenuItem = new ToolStripMenuItem();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            listaDePedidosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -81,6 +81,7 @@
             novoToolStripMenuItem.Name = "novoToolStripMenuItem";
             novoToolStripMenuItem.Size = new Size(103, 22);
             novoToolStripMenuItem.Text = "&Novo";
+            novoToolStripMenuItem.Click += novoToolStripMenuItem_Click;
             // 
             // listaToolStripMenuItem
             // 
@@ -140,16 +141,22 @@
             // 
             pedidoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { novoToolStripMenuItem3, listaDePedidosToolStripMenuItem });
             pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            pedidoToolStripMenuItem.Size = new Size(180, 22);
+            pedidoToolStripMenuItem.Size = new Size(111, 22);
             pedidoToolStripMenuItem.Text = "&Pedido";
             pedidoToolStripMenuItem.Click += pedidoToolStripMenuItem_Click;
             // 
             // novoToolStripMenuItem3
             // 
             novoToolStripMenuItem3.Name = "novoToolStripMenuItem3";
-            novoToolStripMenuItem3.Size = new Size(180, 22);
+            novoToolStripMenuItem3.Size = new Size(159, 22);
             novoToolStripMenuItem3.Text = "&Novo";
             novoToolStripMenuItem3.Click += novoToolStripMenuItem3_Click;
+            // 
+            // listaDePedidosToolStripMenuItem
+            // 
+            listaDePedidosToolStripMenuItem.Name = "listaDePedidosToolStripMenuItem";
+            listaDePedidosToolStripMenuItem.Size = new Size(159, 22);
+            listaDePedidosToolStripMenuItem.Text = "&Lista de Pedidos";
             // 
             // operaToolStripMenuItem
             // 
@@ -161,7 +168,7 @@
             // caixaToolStripMenuItem
             // 
             caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
-            caixaToolStripMenuItem.Size = new Size(180, 22);
+            caixaToolStripMenuItem.Size = new Size(103, 22);
             caixaToolStripMenuItem.Text = "&Caixa";
             // 
             // sairToolStripMenuItem
@@ -186,19 +193,13 @@
             toolStripStatusLabel1.Size = new Size(118, 17);
             toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // listaDePedidosToolStripMenuItem
-            // 
-            listaDePedidosToolStripMenuItem.Name = "listaDePedidosToolStripMenuItem";
-            listaDePedidosToolStripMenuItem.Size = new Size(180, 22);
-            listaDePedidosToolStripMenuItem.Text = "&Lista de Pedidos";
-            // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveBorder;
-            BackgroundImage = Properties.Resources.pexels_nelson_donizeti_3817951_5659662;
-            BackgroundImageLayout = ImageLayout.None;
+            BackColor = Color.Thistle;
+            BackgroundImage = Properties.Resources.pexels_andreea_ch_371539_1166644;
+            BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(999, 617);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);

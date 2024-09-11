@@ -256,7 +256,6 @@
             btnAdd.Text = "Adicionar";
             btnAdd.TextAlign = ContentAlignment.MiddleRight;
             btnAdd.UseVisualStyleBackColor = true;
-            //using btnAdd.Click += btnAdd;
             // 
             // btnEdit
             // 
@@ -288,7 +287,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.pexels_andreea_ch_371539_1166644;
+            BackColor = Color.LightSlateGray;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(784, 593);
             Controls.Add(btnConsultar);

@@ -40,6 +40,25 @@
             txtUsuario = new TextBox();
             lblUsuario = new Label();
             grbItens = new GroupBox();
+            txtDesconto = new TextBox();
+            txtValorUnit = new TextBox();
+            txtQuantidade = new TextBox();
+            txtDescricao = new TextBox();
+            txtCodBar = new TextBox();
+            dgvItensPedido = new DataGridView();
+            clnSeq = new DataGridViewTextBoxColumn();
+            clnCodBar = new DataGridViewTextBoxColumn();
+            clnDescricao = new DataGridViewTextBoxColumn();
+            clnValorUnit = new DataGridViewTextBoxColumn();
+            clnQuantidade = new DataGridViewTextBoxColumn();
+            clnDescontoItem = new DataGridViewTextBoxColumn();
+            clnTotalItem = new DataGridViewTextBoxColumn();
+            label6 = new Label();
+            lblQuantidade = new Label();
+            lblValorUnit = new Label();
+            lblDescricao = new Label();
+            lblCodBar = new Label();
+            btnAdicionar = new Button();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
@@ -51,33 +70,12 @@
             btnFechar = new Button();
             txtTotalPedido = new TextBox();
             lblTotal = new Label();
-            dgvItensPedido = new DataGridView();
-            label6 = new Label();
-            lblQuantidade = new Label();
-            lblValorUnit = new Label();
-            lblDescricao = new Label();
-            lblCodBar = new Label();
-            txtDesconto = new TextBox();
-            txtValorUnit = new TextBox();
-            txtQuantidade = new TextBox();
-            txtDescricao = new TextBox();
-            txtCodBar = new TextBox();
-            btnAdicionar = new Button();
             lblNovoPedido = new Label();
             txtIdPedido = new TextBox();
             lblNumero = new Label();
-            pbImagem = new PictureBox();
-            clnSeq = new DataGridViewTextBoxColumn();
-            clnCodBar = new DataGridViewTextBoxColumn();
-            clnDescricao = new DataGridViewTextBoxColumn();
-            clnValorUnit = new DataGridViewTextBoxColumn();
-            clnQuantidade = new DataGridViewTextBoxColumn();
-            clnDescontoItem = new DataGridViewTextBoxColumn();
-            clnTotalItem = new DataGridViewTextBoxColumn();
             grbIdentificacao.SuspendLayout();
             grbItens.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbImagem).BeginInit();
             SuspendLayout();
             // 
             // grbIdentificacao
@@ -171,6 +169,194 @@
             grbItens.TabIndex = 1;
             grbItens.TabStop = false;
             grbItens.Text = "Itens do Pedido";
+            // 
+            // txtDesconto
+            // 
+            txtDesconto.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDesconto.Location = new Point(534, 69);
+            txtDesconto.Name = "txtDesconto";
+            txtDesconto.Size = new Size(80, 24);
+            txtDesconto.TabIndex = 5;
+            txtDesconto.Text = "0";
+            // 
+            // txtValorUnit
+            // 
+            txtValorUnit.Location = new Point(362, 69);
+            txtValorUnit.Name = "txtValorUnit";
+            txtValorUnit.Size = new Size(80, 31);
+            txtValorUnit.TabIndex = 4;
+            // 
+            // txtQuantidade
+            // 
+            txtQuantidade.Location = new Point(448, 69);
+            txtQuantidade.Name = "txtQuantidade";
+            txtQuantidade.Size = new Size(80, 31);
+            txtQuantidade.TabIndex = 3;
+            // 
+            // txtDescricao
+            // 
+            txtDescricao.Location = new Point(141, 69);
+            txtDescricao.Name = "txtDescricao";
+            txtDescricao.Size = new Size(215, 31);
+            txtDescricao.TabIndex = 2;
+            // 
+            // txtCodBar
+            // 
+            txtCodBar.Location = new Point(20, 69);
+            txtCodBar.Name = "txtCodBar";
+            txtCodBar.Size = new Size(115, 31);
+            txtCodBar.TabIndex = 1;
+            txtCodBar.Leave += txtCodBar_Leave;
+            // 
+            // dgvItensPedido
+            // 
+            dgvItensPedido.AllowUserToAddRows = false;
+            dgvItensPedido.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Tai Le", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvItensPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvItensPedido.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvItensPedido.BackgroundColor = Color.LightSteelBlue;
+            dgvItensPedido.BorderStyle = BorderStyle.None;
+            dgvItensPedido.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dgvItensPedido.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dgvItensPedido.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvItensPedido.Columns.AddRange(new DataGridViewColumn[] { clnSeq, clnCodBar, clnDescricao, clnValorUnit, clnQuantidade, clnDescontoItem, clnTotalItem });
+            dgvItensPedido.Cursor = Cursors.Hand;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Geometr212 BkCn BT", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvItensPedido.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvItensPedido.EditMode = DataGridViewEditMode.EditOnEnter;
+            dgvItensPedido.GridColor = Color.Gainsboro;
+            dgvItensPedido.ImeMode = ImeMode.NoControl;
+            dgvItensPedido.Location = new Point(20, 109);
+            dgvItensPedido.Name = "dgvItensPedido";
+            dgvItensPedido.ReadOnly = true;
+            dgvItensPedido.Size = new Size(708, 247);
+            dgvItensPedido.TabIndex = 11;
+            // 
+            // clnSeq
+            // 
+            clnSeq.FillWeight = 20F;
+            clnSeq.Frozen = true;
+            clnSeq.HeaderText = "#SEQ";
+            clnSeq.Name = "clnSeq";
+            clnSeq.ReadOnly = true;
+            clnSeq.Width = 90;
+            // 
+            // clnCodBar
+            // 
+            clnCodBar.Frozen = true;
+            clnCodBar.HeaderText = "Cód. Barras";
+            clnCodBar.Name = "clnCodBar";
+            clnCodBar.ReadOnly = true;
+            clnCodBar.Width = 130;
+            // 
+            // clnDescricao
+            // 
+            clnDescricao.Frozen = true;
+            clnDescricao.HeaderText = "Descrição";
+            clnDescricao.Name = "clnDescricao";
+            clnDescricao.ReadOnly = true;
+            clnDescricao.Width = 127;
+            // 
+            // clnValorUnit
+            // 
+            clnValorUnit.HeaderText = "Valor Unit.";
+            clnValorUnit.Name = "clnValorUnit";
+            clnValorUnit.ReadOnly = true;
+            clnValorUnit.Width = 122;
+            // 
+            // clnQuantidade
+            // 
+            clnQuantidade.HeaderText = "Quantidade";
+            clnQuantidade.Name = "clnQuantidade";
+            clnQuantidade.ReadOnly = true;
+            clnQuantidade.Width = 138;
+            // 
+            // clnDescontoItem
+            // 
+            clnDescontoItem.HeaderText = "Desconto Item";
+            clnDescontoItem.Name = "clnDescontoItem";
+            clnDescontoItem.ReadOnly = true;
+            clnDescontoItem.Width = 155;
+            // 
+            // clnTotalItem
+            // 
+            dataGridViewCellStyle2.Font = new Font("MS Outlook", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 2);
+            clnTotalItem.DefaultCellStyle = dataGridViewCellStyle2;
+            clnTotalItem.HeaderText = "Total";
+            clnTotalItem.Name = "clnTotalItem";
+            clnTotalItem.ReadOnly = true;
+            clnTotalItem.Width = 82;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(534, 52);
+            label6.Name = "label6";
+            label6.Size = new Size(57, 14);
+            label6.TabIndex = 10;
+            label6.Text = "Desconto";
+            // 
+            // lblQuantidade
+            // 
+            lblQuantidade.AutoSize = true;
+            lblQuantidade.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblQuantidade.Location = new Point(448, 52);
+            lblQuantidade.Name = "lblQuantidade";
+            lblQuantidade.Size = new Size(42, 14);
+            lblQuantidade.TabIndex = 9;
+            lblQuantidade.Text = "Quant.";
+            // 
+            // lblValorUnit
+            // 
+            lblValorUnit.AutoSize = true;
+            lblValorUnit.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblValorUnit.Location = new Point(362, 52);
+            lblValorUnit.Name = "lblValorUnit";
+            lblValorUnit.Size = new Size(63, 14);
+            lblValorUnit.TabIndex = 8;
+            lblValorUnit.Text = "Valor Unit.";
+            // 
+            // lblDescricao
+            // 
+            lblDescricao.AutoSize = true;
+            lblDescricao.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescricao.Location = new Point(141, 52);
+            lblDescricao.Name = "lblDescricao";
+            lblDescricao.Size = new Size(59, 14);
+            lblDescricao.TabIndex = 7;
+            lblDescricao.Text = "Descrição";
+            lblDescricao.Click += label3_Click;
+            // 
+            // lblCodBar
+            // 
+            lblCodBar.AutoSize = true;
+            lblCodBar.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCodBar.Location = new Point(20, 52);
+            lblCodBar.Name = "lblCodBar";
+            lblCodBar.Size = new Size(96, 14);
+            lblCodBar.TabIndex = 6;
+            lblCodBar.Text = "Código de Barras";
+            lblCodBar.Click += label2_Click;
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAdicionar.Location = new Point(620, 52);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(108, 51);
+            btnAdicionar.TabIndex = 0;
+            btnAdicionar.Text = "Adicionar Produto";
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // label10
             // 
@@ -273,134 +459,6 @@
             lblTotal.Text = "Total do Pedido";
             lblTotal.Click += label7_Click;
             // 
-            // dgvItensPedido
-            // 
-            dgvItensPedido.AllowUserToAddRows = false;
-            dgvItensPedido.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Tai Le", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvItensPedido.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvItensPedido.Anchor = AnchorStyles.None;
-            dgvItensPedido.BorderStyle = BorderStyle.Fixed3D;
-            dgvItensPedido.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dgvItensPedido.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
-            dgvItensPedido.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvItensPedido.Columns.AddRange(new DataGridViewColumn[] { clnSeq, clnCodBar, clnDescricao, clnValorUnit, clnQuantidade, clnDescontoItem, clnTotalItem });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvItensPedido.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvItensPedido.GridColor = Color.LightCoral;
-            dgvItensPedido.Location = new Point(20, 109);
-            dgvItensPedido.Name = "dgvItensPedido";
-            dgvItensPedido.ReadOnly = true;
-            dgvItensPedido.Size = new Size(708, 247);
-            dgvItensPedido.TabIndex = 11;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(534, 52);
-            label6.Name = "label6";
-            label6.Size = new Size(57, 14);
-            label6.TabIndex = 10;
-            label6.Text = "Desconto";
-            // 
-            // lblQuantidade
-            // 
-            lblQuantidade.AutoSize = true;
-            lblQuantidade.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblQuantidade.Location = new Point(448, 52);
-            lblQuantidade.Name = "lblQuantidade";
-            lblQuantidade.Size = new Size(42, 14);
-            lblQuantidade.TabIndex = 9;
-            lblQuantidade.Text = "Quant.";
-            // 
-            // lblValorUnit
-            // 
-            lblValorUnit.AutoSize = true;
-            lblValorUnit.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblValorUnit.Location = new Point(362, 52);
-            lblValorUnit.Name = "lblValorUnit";
-            lblValorUnit.Size = new Size(63, 14);
-            lblValorUnit.TabIndex = 8;
-            lblValorUnit.Text = "Valor Unit.";
-            // 
-            // lblDescricao
-            // 
-            lblDescricao.AutoSize = true;
-            lblDescricao.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblDescricao.Location = new Point(141, 52);
-            lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(59, 14);
-            lblDescricao.TabIndex = 7;
-            lblDescricao.Text = "Descrição";
-            lblDescricao.Click += label3_Click;
-            // 
-            // lblCodBar
-            // 
-            lblCodBar.AutoSize = true;
-            lblCodBar.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCodBar.Location = new Point(20, 52);
-            lblCodBar.Name = "lblCodBar";
-            lblCodBar.Size = new Size(96, 14);
-            lblCodBar.TabIndex = 6;
-            lblCodBar.Text = "Código de Barras";
-            lblCodBar.Click += label2_Click;
-            // 
-            // txtDesconto
-            // 
-            txtDesconto.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDesconto.Location = new Point(534, 69);
-            txtDesconto.Name = "txtDesconto";
-            txtDesconto.Size = new Size(80, 24);
-            txtDesconto.TabIndex = 5;
-            txtDesconto.Text = "0";
-            // 
-            // txtValorUnit
-            // 
-            txtValorUnit.Location = new Point(362, 69);
-            txtValorUnit.Name = "txtValorUnit";
-            txtValorUnit.Size = new Size(80, 31);
-            txtValorUnit.TabIndex = 4;
-            // 
-            // txtQuantidade
-            // 
-            txtQuantidade.Location = new Point(448, 69);
-            txtQuantidade.Name = "txtQuantidade";
-            txtQuantidade.Size = new Size(80, 31);
-            txtQuantidade.TabIndex = 3;
-            // 
-            // txtDescricao
-            // 
-            txtDescricao.Location = new Point(141, 69);
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(215, 31);
-            txtDescricao.TabIndex = 2;
-            // 
-            // txtCodBar
-            // 
-            txtCodBar.Location = new Point(20, 69);
-            txtCodBar.Name = "txtCodBar";
-            txtCodBar.Size = new Size(115, 31);
-            txtCodBar.TabIndex = 1;
-            txtCodBar.Leave += txtCodBar_Leave;
-            // 
-            // btnAdicionar
-            // 
-            btnAdicionar.Font = new Font("Geometr212 BkCn BT", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAdicionar.Location = new Point(620, 60);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(108, 43);
-            btnAdicionar.TabIndex = 0;
-            btnAdicionar.Text = "Adicionar Produto";
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += btnAdicionar_Click;
-            // 
             // lblNovoPedido
             // 
             lblNovoPedido.AutoSize = true;
@@ -429,77 +487,12 @@
             lblNumero.TabIndex = 4;
             lblNumero.Text = "Número:";
             // 
-            // pbImagem
-            // 
-            pbImagem.BackgroundImage = Properties.Resources.cavalo3;
-            pbImagem.BackgroundImageLayout = ImageLayout.Zoom;
-            pbImagem.Location = new Point(498, 39);
-            pbImagem.Name = "pbImagem";
-            pbImagem.Size = new Size(279, 198);
-            pbImagem.TabIndex = 5;
-            pbImagem.TabStop = false;
-            // 
-            // clnSeq
-            // 
-            clnSeq.FillWeight = 20F;
-            clnSeq.Frozen = true;
-            clnSeq.HeaderText = "#SEQ";
-            clnSeq.Name = "clnSeq";
-            clnSeq.ReadOnly = true;
-            clnSeq.Width = 40;
-            // 
-            // clnCodBar
-            // 
-            clnCodBar.Frozen = true;
-            clnCodBar.HeaderText = "Cód. Barras";
-            clnCodBar.Name = "clnCodBar";
-            clnCodBar.ReadOnly = true;
-            clnCodBar.Width = 80;
-            // 
-            // clnDescricao
-            // 
-            clnDescricao.Frozen = true;
-            clnDescricao.HeaderText = "Descrição";
-            clnDescricao.Name = "clnDescricao";
-            clnDescricao.ReadOnly = true;
-            clnDescricao.Width = 200;
-            // 
-            // clnValorUnit
-            // 
-            clnValorUnit.HeaderText = "Valor Unit.";
-            clnValorUnit.Name = "clnValorUnit";
-            clnValorUnit.ReadOnly = true;
-            clnValorUnit.Width = 80;
-            // 
-            // clnQuantidade
-            // 
-            clnQuantidade.HeaderText = "Quantidade";
-            clnQuantidade.Name = "clnQuantidade";
-            clnQuantidade.ReadOnly = true;
-            clnQuantidade.Width = 70;
-            // 
-            // clnDescontoItem
-            // 
-            clnDescontoItem.HeaderText = "Desconto Item";
-            clnDescontoItem.Name = "clnDescontoItem";
-            clnDescontoItem.ReadOnly = true;
-            clnDescontoItem.Width = 60;
-            // 
-            // clnTotalItem
-            // 
-            dataGridViewCellStyle2.Font = new Font("MS Outlook", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 2);
-            clnTotalItem.DefaultCellStyle = dataGridViewCellStyle2;
-            clnTotalItem.HeaderText = "Total";
-            clnTotalItem.Name = "clnTotalItem";
-            clnTotalItem.ReadOnly = true;
-            // 
             // FrmPedidoNovo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.RosyBrown;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(802, 709);
-            Controls.Add(pbImagem);
             Controls.Add(lblNumero);
             Controls.Add(txtIdPedido);
             Controls.Add(lblNovoPedido);
@@ -525,7 +518,6 @@
             grbItens.ResumeLayout(false);
             grbItens.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvItensPedido).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbImagem).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -559,7 +551,6 @@
         private TextBox txtTotalPedido;
         private TextBox txtSubTotal;
         private Button btnFechar;
-        private PictureBox pbImagem;
         private TextBox txtTotal;
         private TextBox txtDescontoPedido;
         private TextBox txtDescontoItem;

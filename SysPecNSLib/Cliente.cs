@@ -57,6 +57,16 @@ namespace SysPecNSLib
             Data_Cad = data_cad;
         }
 
+        //Sem ID e Ativo, Data_Cad
+        public Cliente(string? nome, string? cpf, string? telefone, string? email, DateTime? data_nasc)
+        {
+            Nome = nome;
+            CPF = cpf;
+            Telefone = telefone;
+            Email = email;
+            Data_Nasc = data_nasc;
+        }
+
         //Vazio
         public Cliente()
         {
@@ -87,7 +97,7 @@ namespace SysPecNSLib
             Cliente cliente = new();
             var cmd = Banco.Abrir();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = $"select * from cliente where id = {id}";
+            cmd.CommandText = $"select * from clientes where id = {id}";
             var dr = cmd.ExecuteReader();
             if (dr.Read())
             {

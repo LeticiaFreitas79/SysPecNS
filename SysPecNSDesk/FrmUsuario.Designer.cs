@@ -58,6 +58,7 @@
             // dgvUsuarios
             // 
             dgvUsuarios.AllowUserToAddRows = false;
+            dgvUsuarios.BackgroundColor = Color.LightSteelBlue;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { clnid, clnNome, clnEmail, clnNivel, clnAtivo });
             dgvUsuarios.Location = new Point(119, 343);
@@ -157,6 +158,7 @@
             // 
             // btnInserir
             // 
+            btnInserir.BackColor = Color.LightSteelBlue;
             btnInserir.Cursor = Cursors.Hand;
             btnInserir.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 255, 192);
             btnInserir.FlatAppearance.MouseOverBackColor = Color.Green;
@@ -169,7 +171,7 @@
             btnInserir.TabIndex = 7;
             btnInserir.Text = "&Inserir";
             btnInserir.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnInserir.UseVisualStyleBackColor = true;
+            btnInserir.UseVisualStyleBackColor = false;
             btnInserir.Click += btnInserir_Click;
             // 
             // txtEmail
@@ -243,6 +245,7 @@
             // 
             // btnEditar
             // 
+            btnEditar.BackColor = Color.LightSteelBlue;
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             btnEditar.Image = Properties.Resources.Edit_Alt;
@@ -252,11 +255,12 @@
             btnEditar.TabIndex = 8;
             btnEditar.Text = "&Editar";
             btnEditar.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += button1_Click;
             // 
             // btnDeletar
             // 
+            btnDeletar.BackColor = Color.LightSteelBlue;
             btnDeletar.FlatStyle = FlatStyle.Flat;
             btnDeletar.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             btnDeletar.Image = Properties.Resources.Delete;
@@ -266,7 +270,7 @@
             btnDeletar.TabIndex = 9;
             btnDeletar.Text = "De&letar";
             btnDeletar.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnDeletar.UseVisualStyleBackColor = true;
+            btnDeletar.UseVisualStyleBackColor = false;
             // 
             // txtBusca
             // 
@@ -278,6 +282,7 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.LightSteelBlue;
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold);
             btnCancelar.Image = Properties.Resources.Cancel;
@@ -287,14 +292,14 @@
             btnCancelar.TabIndex = 10;
             btnCancelar.Text = "&Cancelar";
             btnCancelar.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += button1_Click_1;
             // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.pexels_andreea_ch_371539_1166644;
+            BackColor = Color.SlateGray;
             BackgroundImageLayout = ImageLayout.Zoom;
             ClientSize = new Size(732, 521);
             Controls.Add(txtBusca);

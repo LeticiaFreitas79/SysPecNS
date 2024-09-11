@@ -96,7 +96,7 @@
             // 
             // TabPageCliente
             // 
-            TabPageCliente.BackColor = Color.MistyRose;
+            TabPageCliente.BackColor = Color.LightSteelBlue;
             TabPageCliente.Controls.Add(lblTelefone);
             TabPageCliente.Controls.Add(lblEmail);
             TabPageCliente.Controls.Add(lblCpf);
@@ -187,6 +187,7 @@
             btnCadastrarEndereco.TabIndex = 7;
             btnCadastrarEndereco.Text = "Cadastrar Endereço";
             btnCadastrarEndereco.UseVisualStyleBackColor = true;
+            btnCadastrarEndereco.Click += btnCadastrarEndereco_Click_1;
             // 
             // btnInserir
             // 
@@ -244,7 +245,7 @@
             // 
             // TabPageEndereco
             // 
-            TabPageEndereco.BackColor = Color.MistyRose;
+            TabPageEndereco.BackColor = Color.LightSteelBlue;
             TabPageEndereco.Controls.Add(cmbTipoEndereco);
             TabPageEndereco.Controls.Add(txtUf);
             TabPageEndereco.Controls.Add(txtComplemento);
@@ -360,7 +361,7 @@
             btnSalvar.TabIndex = 8;
             btnSalvar.Text = "Salvar Endereço";
             btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Click += btnSalvar_Click;
+            btnSalvar.Click += btnSalvar_Click_1;
             // 
             // lblBairro
             // 
@@ -447,7 +448,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.RosyBrown;
+            BackColor = Color.LightSlateGray;
             ClientSize = new Size(592, 477);
             Controls.Add(grbCadastroCliente);
             Name = "FrmCliente";
