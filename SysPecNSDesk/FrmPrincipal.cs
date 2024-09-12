@@ -59,7 +59,11 @@
 
         private void novoToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            FrmPedidoNovo frmPedidoNovo = new FrmPedidoNovo();
+            // FrmPedidoNovo frmPedidoNovo = new FrmPedidoNovo();
+            FrmPedidoNovo frmPedidoNovo = new();
+            frmPedidoNovo.MdiParent = this;
+            //Formas de Exibir.
+            frmPedidoNovo.Show();
 
         }
 

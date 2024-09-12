@@ -54,7 +54,7 @@
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(243, 23);
             txtEmail.TabIndex = 1;
-            txtEmail.Text = "paulo@gmail.com";
+            txtEmail.Text = "leticiafreitas@gmail.com";
             // 
             // txtSenha
             // 
@@ -62,7 +62,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(243, 23);
             txtSenha.TabIndex = 2;
-            txtSenha.Text = "123456";
+            txtSenha.Text = "123";
             txtSenha.UseSystemPasswordChar = true;
             // 
             // btnEntrar
@@ -124,6 +124,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "SysPec | Login";
             ResumeLayout(false);
             PerformLayout();
         }

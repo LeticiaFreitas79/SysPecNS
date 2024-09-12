@@ -323,7 +323,7 @@
             Controls.Add(dgvUsuarios);
             Name = "FrmUsuario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmUsuario";
+            Text = "SysPec | Novo Usuário";
             Load += FrmUsuario_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);

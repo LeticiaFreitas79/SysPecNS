@@ -310,7 +310,7 @@
             Controls.Add(textBox1);
             Controls.Add(lblFornecedores);
             Name = "FrmFornecedor";
-            Text = "FrmFornecedor";
+            Text = "SysPec | Novo Fornecedor";
             Load += FrmFornecedor_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);

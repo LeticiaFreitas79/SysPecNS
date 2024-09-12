@@ -345,7 +345,7 @@
             Controls.Add(txtId);
             Controls.Add(lblProdutos);
             Name = "FrmProduto";
-            Text = "frmProduto";
+            Text = "SysPec | Novo Produto";
             Load += FrmProduto_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudEstoqueMinimo).EndInit();

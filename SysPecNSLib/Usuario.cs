@@ -72,6 +72,7 @@ namespace SysPecNSLib
             {
                 Id = dr.GetInt32(0);
             }
+            cmd.Connection.Close(); //Todas as sessões precisam ser encerradas.
         }
 
         //
@@ -94,6 +95,7 @@ namespace SysPecNSLib
                     );
 
             }
+            cmd.Connection.Close(); //Todas as sessões precisam ser encerradas.
             return usuario;
         }
 
@@ -125,6 +127,7 @@ namespace SysPecNSLib
                         )
                     );
             }
+            // cmd.Connection.Close(); //Todas as sessões precisam ser encerradas.
             return Lista;
         }
 
@@ -147,6 +150,7 @@ namespace SysPecNSLib
                         dr.GetBoolean(5)
                         );
             }
+            cmd.Connection.Close(); //Todas as sessões precisam ser encerradas.
             return usuario;
         }
 

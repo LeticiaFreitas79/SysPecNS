@@ -78,7 +78,7 @@
             grbCadastroCliente.Font = new Font("Geometr212 BkCn BT", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             grbCadastroCliente.Location = new Point(27, 28);
             grbCadastroCliente.Name = "grbCadastroCliente";
-            grbCadastroCliente.Size = new Size(529, 401);
+            grbCadastroCliente.Size = new Size(581, 444);
             grbCadastroCliente.TabIndex = 0;
             grbCadastroCliente.TabStop = false;
             grbCadastroCliente.Text = "Cadastro de Cliente";
@@ -88,7 +88,7 @@
             tabCliente.Controls.Add(TabPageCliente);
             tabCliente.Controls.Add(TabPageEndereco);
             tabCliente.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tabCliente.Location = new Point(6, 22);
+            tabCliente.Location = new Point(33, 40);
             tabCliente.Name = "tabCliente";
             tabCliente.SelectedIndex = 0;
             tabCliente.Size = new Size(517, 373);
@@ -449,10 +449,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(592, 477);
+            ClientSize = new Size(636, 500);
             Controls.Add(grbCadastroCliente);
             Name = "FrmCliente";
-            Text = "FrmCliente";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "SysPec | Novo Cliente";
             Load += FrmCliente_Load;
             grbCadastroCliente.ResumeLayout(false);
             tabCliente.ResumeLayout(false);

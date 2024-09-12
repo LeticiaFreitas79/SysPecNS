@@ -83,7 +83,7 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spcpf", CPF);
             cmd.Parameters.AddWithValue("sptelefone", Telefone);
             cmd.Parameters.AddWithValue("spemail", Email);
-            cmd.Parameters.AddWithValue("spdata_nasc", Data_Nasc);            
+            cmd.Parameters.AddWithValue("spdatanasc", Data_Nasc);            
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {

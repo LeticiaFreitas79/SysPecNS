@@ -207,7 +207,7 @@
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             Name = "FrmPrincipal";
-            Text = "Sistema de Controle de Loja - SysPec";
+            Text = "SysPec";
             WindowState = FormWindowState.Maximized;
             Load += FrmPrincipal_Load;
             menuStrip1.ResumeLayout(false);

@@ -94,7 +94,7 @@ namespace SysPecNSDesk
         {
             ItemPedido item = new(
                 int.Parse(txtIdPedido.Text),
-                produto, 
+                produto,
                 produto.ValorUnit,
                 double.Parse(txtQuantidade.Text),
                 double.Parse(txtDescontoItem.Text)
@@ -132,7 +132,32 @@ namespace SysPecNSDesk
                 total += item.ValorUnit * item.Quantidade - item.Desconto;
             }
             txtTotal.Text = total.ToString();
-           
+
+        }
+
+        private void dgvItensPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtIdCliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grbIdentificacao_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
