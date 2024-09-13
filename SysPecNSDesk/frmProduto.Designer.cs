@@ -239,11 +239,12 @@
             // lblCodBar
             // 
             lblCodBar.AutoSize = true;
-            lblCodBar.Location = new Point(127, 89);
+            lblCodBar.Location = new Point(118, 89);
             lblCodBar.Name = "lblCodBar";
             lblCodBar.Size = new Size(97, 15);
             lblCodBar.TabIndex = 13;
             lblCodBar.Text = "Código de Barras";
+            lblCodBar.Click += lblCodBar_Click;
             // 
             // lblValorUnit
             // 

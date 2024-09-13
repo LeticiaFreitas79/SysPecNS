@@ -72,7 +72,8 @@ namespace SysPecNSDesk
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
-        {Produto produto = new(
+        {
+            Produto produto = new(
                 txtCodBar.Text,
                 txtDescricao.Text,
                 double.Parse(txtValorUnit.Text),
@@ -86,7 +87,7 @@ namespace SysPecNSDesk
             {
                 MessageBox.Show($"Produto gravado com sucesso com o ID {produto.Id}");
                 FrmProduto_Load(sender, e);
-            
+
             }
         }
 
@@ -137,7 +138,7 @@ namespace SysPecNSDesk
                 null,
                 null
                 );
-            
+
             produto.Atualizar(); //Grava as alterações no Banco de Dados.
             MessageBox.Show($"Produto {produto.Descricao} atualizado com sucesso!");
             btnEditar.Enabled = false;
@@ -152,6 +153,11 @@ namespace SysPecNSDesk
             txtUnidadeVenda.Clear();
             txtDescricao.Clear();
             txtDesconto.Clear();
+        }
+
+        private void lblCodBar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
