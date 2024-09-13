@@ -50,6 +50,24 @@ namespace SysPecNSLib
             cmd.Connection.Close();
         }
 
+        //Saída de Produtos do Estoque. Uma quantidade de produtos será subtraída da quantidade atual.
+        public void Saida()
+        {
+
+        }
+
+        //Perda de Produtos do Estoque. Uma quantidade de produtos estragada deverá ser subtraída da quantidade atual do produto
+        public void Perda()
+        {
+
+        }
+
+        //Troca de Produtos do Estoque. Uma quantidade de produtos não sofre alteração, mas a movimentação no estoque é registrada.
+        public void Troca()
+        {
+
+        }
+
         //Consultar os produtos em estoque através do ID.
         public static Estoque ObterPorId (int id)
         {

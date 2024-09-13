@@ -29,31 +29,29 @@
         private void InitializeComponent()
         {
             dgvEstoqueProdutos = new DataGridView();
-            grpProdutoEstoque = new GroupBox();
+            btnAdicionar = new Button();
             txtId = new TextBox();
             txtCodBar = new TextBox();
             Nome = new TextBox();
-            txtDescricao = new TextBox();
-            cmbCategoria = new ComboBox();
             dudQuantidade = new DomainUpDown();
             dudEstoqueMin = new DomainUpDown();
             dtpUltimaMov = new DateTimePicker();
             lblId = new Label();
             lblCodBar = new Label();
             lblNome = new Label();
-            lblDescricao = new Label();
-            lblCategoria = new Label();
             lblQuantidade = new Label();
             lblEstoqueMin = new Label();
             lblUltimaMov = new Label();
+            grpProdutoEstoque = new GroupBox();
             clnId = new DataGridViewTextBoxColumn();
             clnCodBar = new DataGridViewTextBoxColumn();
             clnNome = new DataGridViewTextBoxColumn();
-            clnDescricao = new DataGridViewTextBoxColumn();
-            clnCategoria = new DataGridViewTextBoxColumn();
             clnQuantidade = new DataGridViewTextBoxColumn();
             clnEstoqueMin = new DataGridViewTextBoxColumn();
             clnUltimaMovimentacao = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).BeginInit();
             grpProdutoEstoque.SuspendLayout();
             SuspendLayout();
@@ -64,44 +62,27 @@
             dgvEstoqueProdutos.AllowUserToDeleteRows = false;
             dgvEstoqueProdutos.BackgroundColor = SystemColors.ActiveCaption;
             dgvEstoqueProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEstoqueProdutos.Columns.AddRange(new DataGridViewColumn[] { clnId, clnCodBar, clnNome, clnDescricao, clnCategoria, clnQuantidade, clnEstoqueMin, clnUltimaMovimentacao });
+            dgvEstoqueProdutos.Columns.AddRange(new DataGridViewColumn[] { clnId, clnCodBar, clnNome, clnQuantidade, clnEstoqueMin, clnUltimaMovimentacao });
             dgvEstoqueProdutos.Location = new Point(33, 32);
             dgvEstoqueProdutos.Name = "dgvEstoqueProdutos";
             dgvEstoqueProdutos.ReadOnly = true;
             dgvEstoqueProdutos.RowHeadersVisible = false;
-            dgvEstoqueProdutos.Size = new Size(718, 150);
+            dgvEstoqueProdutos.Size = new Size(534, 150);
             dgvEstoqueProdutos.TabIndex = 0;
             // 
-            // grpProdutoEstoque
+            // btnAdicionar
             // 
-            grpProdutoEstoque.Controls.Add(lblUltimaMov);
-            grpProdutoEstoque.Controls.Add(lblEstoqueMin);
-            grpProdutoEstoque.Controls.Add(lblQuantidade);
-            grpProdutoEstoque.Controls.Add(lblCategoria);
-            grpProdutoEstoque.Controls.Add(lblDescricao);
-            grpProdutoEstoque.Controls.Add(lblNome);
-            grpProdutoEstoque.Controls.Add(lblCodBar);
-            grpProdutoEstoque.Controls.Add(lblId);
-            grpProdutoEstoque.Controls.Add(dtpUltimaMov);
-            grpProdutoEstoque.Controls.Add(dudEstoqueMin);
-            grpProdutoEstoque.Controls.Add(dudQuantidade);
-            grpProdutoEstoque.Controls.Add(cmbCategoria);
-            grpProdutoEstoque.Controls.Add(txtDescricao);
-            grpProdutoEstoque.Controls.Add(Nome);
-            grpProdutoEstoque.Controls.Add(txtCodBar);
-            grpProdutoEstoque.Controls.Add(txtId);
-            grpProdutoEstoque.Font = new Font("Geometr415 Blk BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            grpProdutoEstoque.Location = new Point(33, 225);
-            grpProdutoEstoque.Name = "grpProdutoEstoque";
-            grpProdutoEstoque.Size = new Size(718, 250);
-            grpProdutoEstoque.TabIndex = 1;
-            grpProdutoEstoque.TabStop = false;
-            grpProdutoEstoque.Text = "Produto em Estoque";
+            btnAdicionar.Location = new Point(35, 414);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(118, 32);
+            btnAdicionar.TabIndex = 2;
+            btnAdicionar.Text = "Entrada";
+            btnAdicionar.UseVisualStyleBackColor = true;
             // 
             // txtId
             // 
             txtId.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtId.Location = new Point(37, 50);
+            txtId.Location = new Point(17, 50);
             txtId.Name = "txtId";
             txtId.Size = new Size(65, 24);
             txtId.TabIndex = 0;
@@ -109,40 +90,23 @@
             // txtCodBar
             // 
             txtCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtCodBar.Location = new Point(123, 50);
+            txtCodBar.Location = new Point(88, 50);
             txtCodBar.Name = "txtCodBar";
-            txtCodBar.Size = new Size(157, 24);
+            txtCodBar.Size = new Size(123, 24);
             txtCodBar.TabIndex = 1;
             // 
             // Nome
             // 
             Nome.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            Nome.Location = new Point(302, 50);
+            Nome.Location = new Point(217, 51);
             Nome.Name = "Nome";
-            Nome.Size = new Size(394, 24);
+            Nome.Size = new Size(297, 24);
             Nome.TabIndex = 2;
-            // 
-            // txtDescricao
-            // 
-            txtDescricao.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtDescricao.Location = new Point(37, 122);
-            txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new Size(421, 24);
-            txtDescricao.TabIndex = 3;
-            // 
-            // cmbCategoria
-            // 
-            cmbCategoria.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(477, 122);
-            cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(219, 24);
-            cmbCategoria.TabIndex = 4;
             // 
             // dudQuantidade
             // 
             dudQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dudQuantidade.Location = new Point(38, 201);
+            dudQuantidade.Location = new Point(18, 116);
             dudQuantidade.Name = "dudQuantidade";
             dudQuantidade.Size = new Size(120, 24);
             dudQuantidade.TabIndex = 5;
@@ -150,7 +114,7 @@
             // dudEstoqueMin
             // 
             dudEstoqueMin.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            dudEstoqueMin.Location = new Point(183, 201);
+            dudEstoqueMin.Location = new Point(152, 116);
             dudEstoqueMin.Name = "dudEstoqueMin";
             dudEstoqueMin.Size = new Size(120, 24);
             dudEstoqueMin.TabIndex = 6;
@@ -158,16 +122,16 @@
             // dtpUltimaMov
             // 
             dtpUltimaMov.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            dtpUltimaMov.Location = new Point(400, 201);
+            dtpUltimaMov.Location = new Point(282, 116);
             dtpUltimaMov.Name = "dtpUltimaMov";
-            dtpUltimaMov.Size = new Size(296, 24);
+            dtpUltimaMov.Size = new Size(232, 24);
             dtpUltimaMov.TabIndex = 7;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblId.Location = new Point(37, 32);
+            lblId.Location = new Point(17, 32);
             lblId.Name = "lblId";
             lblId.Size = new Size(23, 16);
             lblId.TabIndex = 8;
@@ -177,7 +141,7 @@
             // 
             lblCodBar.AutoSize = true;
             lblCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCodBar.Location = new Point(123, 32);
+            lblCodBar.Location = new Point(88, 32);
             lblCodBar.Name = "lblCodBar";
             lblCodBar.Size = new Size(82, 16);
             lblCodBar.TabIndex = 9;
@@ -187,37 +151,17 @@
             // 
             lblNome.AutoSize = true;
             lblNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            lblNome.Location = new Point(302, 32);
+            lblNome.Location = new Point(217, 32);
             lblNome.Name = "lblNome";
             lblNome.Size = new Size(115, 16);
             lblNome.TabIndex = 10;
             lblNome.Text = "Nome do Produto";
             // 
-            // lblDescricao
-            // 
-            lblDescricao.AutoSize = true;
-            lblDescricao.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            lblDescricao.Location = new Point(39, 106);
-            lblDescricao.Name = "lblDescricao";
-            lblDescricao.Size = new Size(70, 16);
-            lblDescricao.TabIndex = 11;
-            lblDescricao.Text = "Descrição";
-            // 
-            // lblCategoria
-            // 
-            lblCategoria.AutoSize = true;
-            lblCategoria.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            lblCategoria.Location = new Point(477, 103);
-            lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(67, 16);
-            lblCategoria.TabIndex = 12;
-            lblCategoria.Text = "Categoria";
-            // 
             // lblQuantidade
             // 
             lblQuantidade.AutoSize = true;
             lblQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            lblQuantidade.Location = new Point(39, 183);
+            lblQuantidade.Location = new Point(17, 98);
             lblQuantidade.Name = "lblQuantidade";
             lblQuantidade.Size = new Size(80, 16);
             lblQuantidade.TabIndex = 13;
@@ -227,7 +171,7 @@
             // 
             lblEstoqueMin.AutoSize = true;
             lblEstoqueMin.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            lblEstoqueMin.Location = new Point(182, 182);
+            lblEstoqueMin.Location = new Point(152, 98);
             lblEstoqueMin.Name = "lblEstoqueMin";
             lblEstoqueMin.Size = new Size(110, 16);
             lblEstoqueMin.TabIndex = 14;
@@ -237,11 +181,33 @@
             // 
             lblUltimaMov.AutoSize = true;
             lblUltimaMov.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            lblUltimaMov.Location = new Point(400, 182);
+            lblUltimaMov.Location = new Point(282, 97);
             lblUltimaMov.Name = "lblUltimaMov";
             lblUltimaMov.Size = new Size(143, 16);
             lblUltimaMov.TabIndex = 15;
             lblUltimaMov.Text = "última Movimentação";
+            // 
+            // grpProdutoEstoque
+            // 
+            grpProdutoEstoque.Controls.Add(lblUltimaMov);
+            grpProdutoEstoque.Controls.Add(lblEstoqueMin);
+            grpProdutoEstoque.Controls.Add(lblQuantidade);
+            grpProdutoEstoque.Controls.Add(lblNome);
+            grpProdutoEstoque.Controls.Add(lblCodBar);
+            grpProdutoEstoque.Controls.Add(lblId);
+            grpProdutoEstoque.Controls.Add(dtpUltimaMov);
+            grpProdutoEstoque.Controls.Add(dudEstoqueMin);
+            grpProdutoEstoque.Controls.Add(dudQuantidade);
+            grpProdutoEstoque.Controls.Add(Nome);
+            grpProdutoEstoque.Controls.Add(txtCodBar);
+            grpProdutoEstoque.Controls.Add(txtId);
+            grpProdutoEstoque.Font = new Font("Geometr415 Blk BT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            grpProdutoEstoque.Location = new Point(33, 225);
+            grpProdutoEstoque.Name = "grpProdutoEstoque";
+            grpProdutoEstoque.Size = new Size(534, 165);
+            grpProdutoEstoque.TabIndex = 1;
+            grpProdutoEstoque.TabStop = false;
+            grpProdutoEstoque.Text = "Atualizar Produto em Estoque";
             // 
             // clnId
             // 
@@ -264,21 +230,6 @@
             clnNome.HeaderText = "Nome";
             clnNome.Name = "clnNome";
             clnNome.ReadOnly = true;
-            // 
-            // clnDescricao
-            // 
-            clnDescricao.Frozen = true;
-            clnDescricao.HeaderText = "Descrição";
-            clnDescricao.Name = "clnDescricao";
-            clnDescricao.ReadOnly = true;
-            clnDescricao.Width = 120;
-            // 
-            // clnCategoria
-            // 
-            clnCategoria.Frozen = true;
-            clnCategoria.HeaderText = "Categoria";
-            clnCategoria.Name = "clnCategoria";
-            clnCategoria.ReadOnly = true;
             // 
             // clnQuantidade
             // 
@@ -304,16 +255,47 @@
             clnUltimaMovimentacao.ReadOnly = true;
             clnUltimaMovimentacao.Width = 95;
             // 
+            // button1
+            // 
+            button1.Location = new Point(173, 414);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 32);
+            button1.TabIndex = 3;
+            button1.Text = "Saída ";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(449, 414);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 32);
+            button2.TabIndex = 4;
+            button2.Text = "Troca";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(311, 414);
+            button3.Name = "button3";
+            button3.Size = new Size(118, 32);
+            button3.TabIndex = 5;
+            button3.Text = "Perda";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // FrmEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(785, 517);
+            ClientSize = new Size(599, 547);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(btnAdicionar);
             Controls.Add(grpProdutoEstoque);
             Controls.Add(dgvEstoqueProdutos);
             Name = "FrmEstoque";
-            Text = "FrmEstoque";
+            Text = "SysPec | Estoque";
             ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).EndInit();
             grpProdutoEstoque.ResumeLayout(false);
             grpProdutoEstoque.PerformLayout();
@@ -323,30 +305,28 @@
         #endregion
 
         private DataGridView dgvEstoqueProdutos;
-        private GroupBox grpProdutoEstoque;
-        private DateTimePicker dtpUltimaMov;
-        private DomainUpDown dudEstoqueMin;
-        private DomainUpDown dudQuantidade;
-        private ComboBox cmbCategoria;
-        private TextBox txtDescricao;
-        private TextBox Nome;
-        private TextBox txtCodBar;
-        private TextBox txtId;
-        private Label lblUltimaMov;
-        private Label lblEstoqueMin;
-        private Label lblQuantidade;
-        private Label lblCategoria;
-        private Label lblDescricao;
-        private Label lblNome;
-        private Label lblCodBar;
-        private Label lblId;
+        private Button btnAdicionar;
         private DataGridViewTextBoxColumn clnId;
         private DataGridViewTextBoxColumn clnCodBar;
         private DataGridViewTextBoxColumn clnNome;
-        private DataGridViewTextBoxColumn clnDescricao;
-        private DataGridViewTextBoxColumn clnCategoria;
         private DataGridViewTextBoxColumn clnQuantidade;
         private DataGridViewTextBoxColumn clnEstoqueMin;
         private DataGridViewTextBoxColumn clnUltimaMovimentacao;
+        private TextBox txtId;
+        private TextBox txtCodBar;
+        private TextBox Nome;
+        private DomainUpDown dudQuantidade;
+        private DomainUpDown dudEstoqueMin;
+        private DateTimePicker dtpUltimaMov;
+        private Label lblId;
+        private Label lblCodBar;
+        private Label lblNome;
+        private Label lblQuantidade;
+        private Label lblEstoqueMin;
+        private Label lblUltimaMov;
+        private GroupBox grpProdutoEstoque;
+        private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }
