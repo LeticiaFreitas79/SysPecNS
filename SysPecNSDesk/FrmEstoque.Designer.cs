@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             dgvEstoqueProdutos = new DataGridView();
-            btnAdicionar = new Button();
+            btnEntrada = new Button();
             txtId = new TextBox();
             txtCodBar = new TextBox();
             Nome = new TextBox();
@@ -43,9 +43,9 @@
             lblEstoqueMin = new Label();
             lblUltimaMov = new Label();
             grpProdutoEstoque = new GroupBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnSaida = new Button();
+            btnTroca = new Button();
+            btnPerda = new Button();
             clnId = new DataGridViewTextBoxColumn();
             clnCodBar = new DataGridViewTextBoxColumn();
             clnNome = new DataGridViewTextBoxColumn();
@@ -72,18 +72,19 @@
             dgvEstoqueProdutos.Size = new Size(534, 150);
             dgvEstoqueProdutos.TabIndex = 0;
             // 
-            // btnAdicionar
+            // btnEntrada
             // 
-            btnAdicionar.BackColor = SystemColors.ButtonFace;
-            btnAdicionar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdicionar.ForeColor = SystemColors.ActiveCaptionText;
-            btnAdicionar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAdicionar.Location = new Point(35, 413);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(118, 35);
-            btnAdicionar.TabIndex = 2;
-            btnAdicionar.Text = "Entrada";
-            btnAdicionar.UseVisualStyleBackColor = false;
+            btnEntrada.BackColor = SystemColors.ButtonFace;
+            btnEntrada.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEntrada.ForeColor = SystemColors.ActiveCaptionText;
+            btnEntrada.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEntrada.Location = new Point(35, 413);
+            btnEntrada.Name = "btnEntrada";
+            btnEntrada.Size = new Size(118, 35);
+            btnEntrada.TabIndex = 2;
+            btnEntrada.Text = "Entrada";
+            btnEntrada.UseVisualStyleBackColor = false;
+            btnEntrada.Click += btnAdicionar_Click;
             // 
             // txtId
             // 
@@ -215,41 +216,41 @@
             grpProdutoEstoque.TabStop = false;
             grpProdutoEstoque.Text = "Atualizar Produto em Estoque";
             // 
-            // button1
+            // btnSaida
             // 
-            button1.BackColor = SystemColors.ButtonFace;
-            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(173, 413);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 35);
-            button1.TabIndex = 3;
-            button1.Text = "Saída ";
-            button1.UseVisualStyleBackColor = false;
+            btnSaida.BackColor = SystemColors.ButtonFace;
+            btnSaida.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSaida.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSaida.Location = new Point(173, 413);
+            btnSaida.Name = "btnSaida";
+            btnSaida.Size = new Size(118, 35);
+            btnSaida.TabIndex = 3;
+            btnSaida.Text = "Saída ";
+            btnSaida.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnTroca
             // 
-            button2.BackColor = SystemColors.ButtonFace;
-            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(449, 413);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 35);
-            button2.TabIndex = 4;
-            button2.Text = "Troca";
-            button2.UseVisualStyleBackColor = false;
+            btnTroca.BackColor = SystemColors.ButtonFace;
+            btnTroca.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTroca.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTroca.Location = new Point(449, 413);
+            btnTroca.Name = "btnTroca";
+            btnTroca.Size = new Size(118, 35);
+            btnTroca.TabIndex = 4;
+            btnTroca.Text = "Troca";
+            btnTroca.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnPerda
             // 
-            button3.BackColor = SystemColors.ButtonFace;
-            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(311, 413);
-            button3.Name = "button3";
-            button3.Size = new Size(118, 35);
-            button3.TabIndex = 5;
-            button3.Text = "Perda";
-            button3.UseVisualStyleBackColor = false;
+            btnPerda.BackColor = SystemColors.ButtonFace;
+            btnPerda.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPerda.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPerda.Location = new Point(311, 413);
+            btnPerda.Name = "btnPerda";
+            btnPerda.Size = new Size(118, 35);
+            btnPerda.TabIndex = 5;
+            btnPerda.Text = "Perda";
+            btnPerda.UseVisualStyleBackColor = false;
             // 
             // clnId
             // 
@@ -323,10 +324,10 @@
             ClientSize = new Size(599, 523);
             Controls.Add(btnCancelar);
             Controls.Add(btnAtualizar);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(btnAdicionar);
+            Controls.Add(btnPerda);
+            Controls.Add(btnTroca);
+            Controls.Add(btnSaida);
+            Controls.Add(btnEntrada);
             Controls.Add(grpProdutoEstoque);
             Controls.Add(dgvEstoqueProdutos);
             Name = "FrmEstoque";
@@ -340,7 +341,7 @@
         #endregion
 
         private DataGridView dgvEstoqueProdutos;
-        private Button btnAdicionar;
+        private Button btnEntrada;
         private TextBox txtId;
         private TextBox txtCodBar;
         private TextBox Nome;
@@ -354,9 +355,9 @@
         private Label lblEstoqueMin;
         private Label lblUltimaMov;
         private GroupBox grpProdutoEstoque;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnSaida;
+        private Button btnTroca;
+        private Button btnPerda;
         private DataGridViewTextBoxColumn clnId;
         private DataGridViewTextBoxColumn clnCodBar;
         private DataGridViewTextBoxColumn clnNome;
