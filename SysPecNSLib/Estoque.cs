@@ -37,34 +37,17 @@ namespace SysPecNSLib
         }
 
         //Entrada de Produtos no Estoque. Uma nova quantidade de produtos será adicionada a quantidade atual.
-        public void Entrada()
+        public void Inserir()
         {
             var cmd = Banco.Abrir(); //Chama o Banco de Dados.
             cmd.CommandType = CommandType.StoredProcedure; //Permite o use das StoredProcedures existentes no Banco de Dados.
-            cmd.CommandText = "sp_estoque_entrada"; //Chama a Stored Procedure referente a função a ser executada.
+            cmd.CommandText = "sp_estoque_insert"; //Chama a Stored Procedure referente a função a ser executada.
             //As linhas abaixo associam os campos no Banco de Dados com os campos do Formulário.
             cmd.Parameters.AddWithValue("id", Id);
             cmd.Parameters.AddWithValue("quantidade", Quantidade);
             cmd.Parameters.AddWithValue("UltimaMovimentacao", UltimaMovimentacao);
-            var dr = cmd.ExecuteReader(); //Executa a função.    
-        }
-
-        //Saída de Produtos do Estoque. Uma quantidade de produtos será subtraída da quantidade atual.
-        public void Saida()
-        {
-          
-        }
-
-        //Perda de Produtos do Estoque. Uma quantidade de produtos estragada deverá ser subtraída da quantidade atual do produto
-        public void Perda()
-        {
-
-        }
-        
-        //Troca de Produtos do Estoque. Uma quantidade de produtos não sofre alteração, mas a movimentação no estoque é registrada.
-        public void Troca()
-        {
-
+            var dr = cmd.ExecuteReader(); //Executa a função.
+            cmd.Connection.Close();
         }
 
         //Consultar os produtos em estoque através do ID.
@@ -84,6 +67,7 @@ namespace SysPecNSLib
                     dr.GetDateTime(4) //UltimaMovimentacao
                     );
             }
+            cmd.Connection.Close();
             return estoque;
         }
 
@@ -102,6 +86,20 @@ namespace SysPecNSLib
                 comandosSQL.CommandText = $"select * from estoque where nome like '%{nome}%' order by nome"; 
             }
             return Lista;
+        }
+
+        //Atualiza Produto no Estoque.
+        public void Atualizar()
+        {
+            var cmd = Banco.Abrir(); //Chama o Banco de Dados.
+            cmd.CommandType = CommandType.StoredProcedure; //Permite o uso da StoredProcedure.
+            cmd.CommandText = "sp_estoque_update"; //Chama a StoreProcedure.
+            cmd.Parameters.AddWithValue("sp_produto_id", Id);
+            cmd.Parameters.AddWithValue("sp_nome", Nome);
+            cmd.Parameters.AddWithValue("sp_quantidade", Quantidade);
+            cmd.Parameters.AddWithValue("sp_data_ultimo_movimento", UltimaMovimentacao);
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
     }
 }
