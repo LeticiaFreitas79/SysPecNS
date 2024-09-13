@@ -74,12 +74,16 @@
             // 
             // btnAdicionar
             // 
-            btnAdicionar.Location = new Point(35, 414);
+            btnAdicionar.BackColor = SystemColors.ButtonFace;
+            btnAdicionar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdicionar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAdicionar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdicionar.Location = new Point(35, 413);
             btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(118, 32);
+            btnAdicionar.Size = new Size(118, 35);
             btnAdicionar.TabIndex = 2;
             btnAdicionar.Text = "Entrada";
-            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.UseVisualStyleBackColor = false;
             // 
             // txtId
             // 
@@ -213,30 +217,39 @@
             // 
             // button1
             // 
-            button1.Location = new Point(173, 414);
+            button1.BackColor = SystemColors.ButtonFace;
+            button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(173, 413);
             button1.Name = "button1";
-            button1.Size = new Size(118, 32);
+            button1.Size = new Size(118, 35);
             button1.TabIndex = 3;
             button1.Text = "Saída ";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
-            button2.Location = new Point(449, 414);
+            button2.BackColor = SystemColors.ButtonFace;
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ImageAlign = ContentAlignment.MiddleLeft;
+            button2.Location = new Point(449, 413);
             button2.Name = "button2";
-            button2.Size = new Size(118, 32);
+            button2.Size = new Size(118, 35);
             button2.TabIndex = 4;
             button2.Text = "Troca";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             // 
             // button3
             // 
-            button3.Location = new Point(311, 414);
+            button3.BackColor = SystemColors.ButtonFace;
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ImageAlign = ContentAlignment.MiddleLeft;
+            button3.Location = new Point(311, 413);
             button3.Name = "button3";
-            button3.Size = new Size(118, 32);
+            button3.Size = new Size(118, 35);
             button3.TabIndex = 5;
             button3.Text = "Perda";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             // 
             // clnId
             // 
@@ -286,7 +299,7 @@
             // 
             // btnAtualizar
             // 
-            btnAtualizar.Location = new Point(72, 467);
+            btnAtualizar.Location = new Point(72, 469);
             btnAtualizar.Name = "btnAtualizar";
             btnAtualizar.Size = new Size(182, 23);
             btnAtualizar.TabIndex = 6;
@@ -295,7 +308,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(347, 467);
+            btnCancelar.Location = new Point(347, 469);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(182, 23);
             btnCancelar.TabIndex = 7;
@@ -307,7 +320,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(599, 524);
+            ClientSize = new Size(599, 523);
             Controls.Add(btnCancelar);
             Controls.Add(btnAtualizar);
             Controls.Add(button3);
