@@ -20,7 +20,10 @@ namespace SysPecNSLib
         public static MySqlCommand Abrir() // método de conexão
         {
             // dados da conexão
-            string strconn = @"server=10.91.45.21;database=syspecdb;user=root;password=root"; //Dados Banco Well
+            string strconn = @"server=10.91.45.21;database=syspecdb;user=root;password=root"; //Banco de Dados Well
+            //string strconn = @"server=127.0.0.1;database=syspecdb;user=root;password="; //Banco de Dados Pessoal
+            //string strconn = @"server=10.91.45.20;database=syspecdb;user=root;password=root"; //Banco de Dados Atividade Prática Avaliativa
+            MySqlConnection cn = new MySqlConnection(strconn);
             MySqlCommand cmd = new MySqlCommand();
             try // tratamento de excessão
             {

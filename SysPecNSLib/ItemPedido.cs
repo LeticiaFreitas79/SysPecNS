@@ -52,13 +52,15 @@ namespace SysPecNSLib
             cmd.Parameters.AddWithValue("spquantidade", Quantidade);
             cmd.Parameters.AddWithValue("spdesconto", Desconto);
             Id = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.ExecuteNonQuery();
+            cmd.Connection.Close();
         }
 
-        public static List<ItemPedido> ObterListaPorPedido(int id)
+        public static List<ItemPedido> ObterListaPorPedido(int idPedido)
         {
             List<ItemPedido> Itens = new();
             var cmd = Banco.Abrir();
-            cmd.CommandText = $"select * from itempedido where pedido_id = {id}";
+            cmd.CommandText = $"select * from itempedido where pedido_id = {idPedido}";
             var dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -72,6 +74,7 @@ namespace SysPecNSLib
                         dr.GetDouble(5)
                         ));
             }
+            cmd.Connection.Close();
             return Itens; //serve para que ObterListaPorPedido funcione.
         }
 
