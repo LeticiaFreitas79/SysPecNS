@@ -35,7 +35,7 @@ namespace SysPecNSLib
         {
 
         }
-
+    
         //Entrada de Produtos no Estoque. Uma nova quantidade de produtos será adicionada a quantidade atual.
         public void Inserir()
         {

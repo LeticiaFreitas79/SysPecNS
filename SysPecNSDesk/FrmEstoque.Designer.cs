@@ -43,15 +43,17 @@
             lblEstoqueMin = new Label();
             lblUltimaMov = new Label();
             grpProdutoEstoque = new GroupBox();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             clnId = new DataGridViewTextBoxColumn();
             clnCodBar = new DataGridViewTextBoxColumn();
             clnNome = new DataGridViewTextBoxColumn();
             clnQuantidade = new DataGridViewTextBoxColumn();
             clnEstoqueMin = new DataGridViewTextBoxColumn();
             clnUltimaMovimentacao = new DataGridViewTextBoxColumn();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnAtualizar = new Button();
+            btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).BeginInit();
             grpProdutoEstoque.SuspendLayout();
             SuspendLayout();
@@ -209,6 +211,33 @@
             grpProdutoEstoque.TabStop = false;
             grpProdutoEstoque.Text = "Atualizar Produto em Estoque";
             // 
+            // button1
+            // 
+            button1.Location = new Point(173, 414);
+            button1.Name = "button1";
+            button1.Size = new Size(118, 32);
+            button1.TabIndex = 3;
+            button1.Text = "Saída ";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(449, 414);
+            button2.Name = "button2";
+            button2.Size = new Size(118, 32);
+            button2.TabIndex = 4;
+            button2.Text = "Troca";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(311, 414);
+            button3.Name = "button3";
+            button3.Size = new Size(118, 32);
+            button3.TabIndex = 5;
+            button3.Text = "Perda";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // clnId
             // 
             clnId.Frozen = true;
@@ -237,7 +266,7 @@
             clnQuantidade.HeaderText = "Quantidade";
             clnQuantidade.Name = "clnQuantidade";
             clnQuantidade.ReadOnly = true;
-            clnQuantidade.Width = 80;
+            clnQuantidade.Width = 90;
             // 
             // clnEstoqueMin
             // 
@@ -253,41 +282,34 @@
             clnUltimaMovimentacao.HeaderText = "Última Movimentação";
             clnUltimaMovimentacao.Name = "clnUltimaMovimentacao";
             clnUltimaMovimentacao.ReadOnly = true;
-            clnUltimaMovimentacao.Width = 95;
+            clnUltimaMovimentacao.Width = 120;
             // 
-            // button1
+            // btnAtualizar
             // 
-            button1.Location = new Point(173, 414);
-            button1.Name = "button1";
-            button1.Size = new Size(118, 32);
-            button1.TabIndex = 3;
-            button1.Text = "Saída ";
-            button1.UseVisualStyleBackColor = true;
+            btnAtualizar.Location = new Point(72, 467);
+            btnAtualizar.Name = "btnAtualizar";
+            btnAtualizar.Size = new Size(182, 23);
+            btnAtualizar.TabIndex = 6;
+            btnAtualizar.Text = "Atualizar";
+            btnAtualizar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.Location = new Point(449, 414);
-            button2.Name = "button2";
-            button2.Size = new Size(118, 32);
-            button2.TabIndex = 4;
-            button2.Text = "Troca";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(311, 414);
-            button3.Name = "button3";
-            button3.Size = new Size(118, 32);
-            button3.TabIndex = 5;
-            button3.Text = "Perda";
-            button3.UseVisualStyleBackColor = true;
+            btnCancelar.Location = new Point(347, 467);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(182, 23);
+            btnCancelar.TabIndex = 7;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
             // 
             // FrmEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(599, 547);
+            ClientSize = new Size(599, 524);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnAtualizar);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -306,12 +328,6 @@
 
         private DataGridView dgvEstoqueProdutos;
         private Button btnAdicionar;
-        private DataGridViewTextBoxColumn clnId;
-        private DataGridViewTextBoxColumn clnCodBar;
-        private DataGridViewTextBoxColumn clnNome;
-        private DataGridViewTextBoxColumn clnQuantidade;
-        private DataGridViewTextBoxColumn clnEstoqueMin;
-        private DataGridViewTextBoxColumn clnUltimaMovimentacao;
         private TextBox txtId;
         private TextBox txtCodBar;
         private TextBox Nome;
@@ -328,5 +344,13 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private DataGridViewTextBoxColumn clnId;
+        private DataGridViewTextBoxColumn clnCodBar;
+        private DataGridViewTextBoxColumn clnNome;
+        private DataGridViewTextBoxColumn clnQuantidade;
+        private DataGridViewTextBoxColumn clnEstoqueMin;
+        private DataGridViewTextBoxColumn clnUltimaMovimentacao;
+        private Button btnAtualizar;
+        private Button btnCancelar;
     }
 }
