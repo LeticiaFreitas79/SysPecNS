@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             dgvEstoqueProdutos = new DataGridView();
+            clnId = new DataGridViewTextBoxColumn();
+            clnCodBar = new DataGridViewTextBoxColumn();
+            clnNome = new DataGridViewTextBoxColumn();
+            clnQuantidade = new DataGridViewTextBoxColumn();
+            clnEstoqueMin = new DataGridViewTextBoxColumn();
+            clnUltimaMovimentacao = new DataGridViewTextBoxColumn();
             txtEntradaId = new TextBox();
             txtEntradaCodBar = new TextBox();
             txtEntradaNome = new TextBox();
@@ -42,44 +48,38 @@
             tabControl1 = new TabControl();
             Entrada = new TabPage();
             Saída = new TabPage();
-            Perda = new TabPage();
-            Troca = new TabPage();
             btnSaidaCancelar = new Button();
-            btnSaidaAtualizar = new Button();
-            txtSaidaId = new TextBox();
-            label1 = new Label();
-            txtSaidaCodBar = new TextBox();
-            label2 = new Label();
-            txtSaidaNome = new TextBox();
-            label3 = new Label();
-            dudSaidaQuantidade = new DomainUpDown();
             label4 = new Label();
-            btnTrocaCancelar = new Button();
-            btnTrocaAtualizar = new Button();
-            txtTrocaId = new TextBox();
-            label5 = new Label();
-            txtTrocaCodBar = new TextBox();
-            label6 = new Label();
-            txtTrocaNome = new TextBox();
-            label7 = new Label();
-            dudTrocaQuantidade = new DomainUpDown();
-            label8 = new Label();
+            dudSaidaQuantidade = new DomainUpDown();
+            label3 = new Label();
+            txtSaidaNome = new TextBox();
+            label2 = new Label();
+            txtSaidaCodBar = new TextBox();
+            label1 = new Label();
+            txtSaidaId = new TextBox();
+            btnSaidaAtualizar = new Button();
+            Perda = new TabPage();
             btnPerdaCancelar = new Button();
             btnPerdaAtualizar = new Button();
-            txtPerdaId = new TextBox();
-            label9 = new Label();
-            txtPerdaCodBar = new TextBox();
-            label10 = new Label();
-            txtPerdaNome = new TextBox();
-            label11 = new Label();
-            dudPerdaQuantidade = new DomainUpDown();
             label12 = new Label();
-            clnId = new DataGridViewTextBoxColumn();
-            clnCodBar = new DataGridViewTextBoxColumn();
-            clnNome = new DataGridViewTextBoxColumn();
-            clnQuantidade = new DataGridViewTextBoxColumn();
-            clnEstoqueMin = new DataGridViewTextBoxColumn();
-            clnUltimaMovimentacao = new DataGridViewTextBoxColumn();
+            txtPerdaId = new TextBox();
+            dudPerdaQuantidade = new DomainUpDown();
+            label9 = new Label();
+            label11 = new Label();
+            txtPerdaCodBar = new TextBox();
+            txtPerdaNome = new TextBox();
+            label10 = new Label();
+            Troca = new TabPage();
+            btnTrocaCancelar = new Button();
+            btnTrocaAtualizar = new Button();
+            label8 = new Label();
+            txtTrocaId = new TextBox();
+            dudTrocaQuantidade = new DomainUpDown();
+            label5 = new Label();
+            label7 = new Label();
+            txtTrocaCodBar = new TextBox();
+            txtTrocaNome = new TextBox();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).BeginInit();
             tabControl1.SuspendLayout();
             Entrada.SuspendLayout();
@@ -102,6 +102,52 @@
             dgvEstoqueProdutos.Size = new Size(548, 150);
             dgvEstoqueProdutos.TabIndex = 0;
             dgvEstoqueProdutos.CellContentClick += dgvEstoqueProdutos_CellContentClick;
+            // 
+            // clnId
+            // 
+            clnId.Frozen = true;
+            clnId.HeaderText = "ID";
+            clnId.Name = "clnId";
+            clnId.ReadOnly = true;
+            clnId.Width = 40;
+            // 
+            // clnCodBar
+            // 
+            clnCodBar.Frozen = true;
+            clnCodBar.HeaderText = "Cód. Barras";
+            clnCodBar.Name = "clnCodBar";
+            clnCodBar.ReadOnly = true;
+            // 
+            // clnNome
+            // 
+            clnNome.Frozen = true;
+            clnNome.HeaderText = "Nome";
+            clnNome.Name = "clnNome";
+            clnNome.ReadOnly = true;
+            clnNome.Width = 125;
+            // 
+            // clnQuantidade
+            // 
+            clnQuantidade.Frozen = true;
+            clnQuantidade.HeaderText = "Quantidade";
+            clnQuantidade.Name = "clnQuantidade";
+            clnQuantidade.ReadOnly = true;
+            clnQuantidade.Width = 90;
+            // 
+            // clnEstoqueMin
+            // 
+            clnEstoqueMin.Frozen = true;
+            clnEstoqueMin.HeaderText = "Estoque Mínimo";
+            clnEstoqueMin.Name = "clnEstoqueMin";
+            clnEstoqueMin.ReadOnly = true;
+            clnEstoqueMin.Width = 90;
+            // 
+            // clnUltimaMovimentacao
+            // 
+            clnUltimaMovimentacao.Frozen = true;
+            clnUltimaMovimentacao.HeaderText = "Última Movimentação";
+            clnUltimaMovimentacao.Name = "clnUltimaMovimentacao";
+            clnUltimaMovimentacao.ReadOnly = true;
             // 
             // txtEntradaId
             // 
@@ -215,7 +261,7 @@
             // 
             // Entrada
             // 
-            Entrada.BackColor = Color.LightSteelBlue;
+            Entrada.BackColor = Color.CadetBlue;
             Entrada.Controls.Add(btnEntradaCancelar);
             Entrada.Controls.Add(btnEntradaAtualizar);
             Entrada.Controls.Add(txtEntradaId);
@@ -235,7 +281,7 @@
             // 
             // Saída
             // 
-            Saída.BackColor = Color.LightSteelBlue;
+            Saída.BackColor = Color.SteelBlue;
             Saída.Controls.Add(btnSaidaCancelar);
             Saída.Controls.Add(label4);
             Saída.Controls.Add(dudSaidaQuantidade);
@@ -253,9 +299,103 @@
             Saída.TabIndex = 1;
             Saída.Text = "Saída";
             // 
+            // btnSaidaCancelar
+            // 
+            btnSaidaCancelar.Font = new Font("Geometr212 BkCn BT", 9F);
+            btnSaidaCancelar.Location = new Point(335, 119);
+            btnSaidaCancelar.Name = "btnSaidaCancelar";
+            btnSaidaCancelar.Size = new Size(182, 23);
+            btnSaidaCancelar.TabIndex = 19;
+            btnSaidaCancelar.Text = "Cancelar";
+            btnSaidaCancelar.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(20, 31);
+            label4.Name = "label4";
+            label4.Size = new Size(23, 16);
+            label4.TabIndex = 20;
+            label4.Text = "ID";
+            // 
+            // dudSaidaQuantidade
+            // 
+            dudSaidaQuantidade.BorderStyle = BorderStyle.FixedSingle;
+            dudSaidaQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dudSaidaQuantidade.Location = new Point(21, 116);
+            dudSaidaQuantidade.Name = "dudSaidaQuantidade";
+            dudSaidaQuantidade.Size = new Size(295, 24);
+            dudSaidaQuantidade.TabIndex = 17;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(91, 31);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 16);
+            label3.TabIndex = 21;
+            label3.Text = "Cód. Barras";
+            // 
+            // txtSaidaNome
+            // 
+            txtSaidaNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtSaidaNome.Location = new Point(220, 50);
+            txtSaidaNome.Name = "txtSaidaNome";
+            txtSaidaNome.Size = new Size(297, 24);
+            txtSaidaNome.TabIndex = 16;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            label2.Location = new Point(220, 31);
+            label2.Name = "label2";
+            label2.Size = new Size(115, 16);
+            label2.TabIndex = 22;
+            label2.Text = "Nome do Produto";
+            // 
+            // txtSaidaCodBar
+            // 
+            txtSaidaCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtSaidaCodBar.Location = new Point(91, 49);
+            txtSaidaCodBar.Name = "txtSaidaCodBar";
+            txtSaidaCodBar.Size = new Size(123, 24);
+            txtSaidaCodBar.TabIndex = 15;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            label1.Location = new Point(20, 97);
+            label1.Name = "label1";
+            label1.Size = new Size(239, 16);
+            label1.TabIndex = 23;
+            label1.Text = "Quantidade a ser retirada do estoque";
+            label1.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // txtSaidaId
+            // 
+            txtSaidaId.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtSaidaId.Location = new Point(20, 49);
+            txtSaidaId.Name = "txtSaidaId";
+            txtSaidaId.Size = new Size(65, 24);
+            txtSaidaId.TabIndex = 14;
+            // 
+            // btnSaidaAtualizar
+            // 
+            btnSaidaAtualizar.Font = new Font("Geometr212 BkCn BT", 9F);
+            btnSaidaAtualizar.Location = new Point(335, 90);
+            btnSaidaAtualizar.Name = "btnSaidaAtualizar";
+            btnSaidaAtualizar.Size = new Size(182, 23);
+            btnSaidaAtualizar.TabIndex = 18;
+            btnSaidaAtualizar.Text = "Atualizar";
+            btnSaidaAtualizar.UseVisualStyleBackColor = true;
+            // 
             // Perda
             // 
-            Perda.BackColor = Color.LightSteelBlue;
+            Perda.BackColor = Color.CadetBlue;
             Perda.Controls.Add(btnPerdaCancelar);
             Perda.Controls.Add(btnPerdaAtualizar);
             Perda.Controls.Add(label12);
@@ -272,214 +412,6 @@
             Perda.Size = new Size(540, 173);
             Perda.TabIndex = 2;
             Perda.Text = "Perda";
-            // 
-            // Troca
-            // 
-            Troca.BackColor = Color.LightSteelBlue;
-            Troca.Controls.Add(btnTrocaCancelar);
-            Troca.Controls.Add(btnTrocaAtualizar);
-            Troca.Controls.Add(label8);
-            Troca.Controls.Add(txtTrocaId);
-            Troca.Controls.Add(dudTrocaQuantidade);
-            Troca.Controls.Add(label5);
-            Troca.Controls.Add(label7);
-            Troca.Controls.Add(txtTrocaCodBar);
-            Troca.Controls.Add(txtTrocaNome);
-            Troca.Controls.Add(label6);
-            Troca.Location = new Point(4, 25);
-            Troca.Name = "Troca";
-            Troca.Padding = new Padding(3);
-            Troca.Size = new Size(540, 173);
-            Troca.TabIndex = 3;
-            Troca.Text = "Troca";
-            // 
-            // btnSaidaCancelar
-            // 
-            btnSaidaCancelar.Font = new Font("Geometr212 BkCn BT", 9F);
-            btnSaidaCancelar.Location = new Point(335, 119);
-            btnSaidaCancelar.Name = "btnSaidaCancelar";
-            btnSaidaCancelar.Size = new Size(182, 23);
-            btnSaidaCancelar.TabIndex = 19;
-            btnSaidaCancelar.Text = "Cancelar";
-            btnSaidaCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnSaidaAtualizar
-            // 
-            btnSaidaAtualizar.Font = new Font("Geometr212 BkCn BT", 9F);
-            btnSaidaAtualizar.Location = new Point(335, 90);
-            btnSaidaAtualizar.Name = "btnSaidaAtualizar";
-            btnSaidaAtualizar.Size = new Size(182, 23);
-            btnSaidaAtualizar.TabIndex = 18;
-            btnSaidaAtualizar.Text = "Atualizar";
-            btnSaidaAtualizar.UseVisualStyleBackColor = true;
-            // 
-            // txtSaidaId
-            // 
-            txtSaidaId.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtSaidaId.Location = new Point(20, 49);
-            txtSaidaId.Name = "txtSaidaId";
-            txtSaidaId.Size = new Size(65, 24);
-            txtSaidaId.TabIndex = 14;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            label1.Location = new Point(20, 97);
-            label1.Name = "label1";
-            label1.Size = new Size(239, 16);
-            label1.TabIndex = 23;
-            label1.Text = "Quantidade a ser retirada do estoque";
-            label1.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // txtSaidaCodBar
-            // 
-            txtSaidaCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtSaidaCodBar.Location = new Point(91, 49);
-            txtSaidaCodBar.Name = "txtSaidaCodBar";
-            txtSaidaCodBar.Size = new Size(123, 24);
-            txtSaidaCodBar.TabIndex = 15;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            label2.Location = new Point(220, 31);
-            label2.Name = "label2";
-            label2.Size = new Size(115, 16);
-            label2.TabIndex = 22;
-            label2.Text = "Nome do Produto";
-            // 
-            // txtSaidaNome
-            // 
-            txtSaidaNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtSaidaNome.Location = new Point(220, 50);
-            txtSaidaNome.Name = "txtSaidaNome";
-            txtSaidaNome.Size = new Size(297, 24);
-            txtSaidaNome.TabIndex = 16;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(91, 31);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 16);
-            label3.TabIndex = 21;
-            label3.Text = "Cód. Barras";
-            // 
-            // dudSaidaQuantidade
-            // 
-            dudSaidaQuantidade.BorderStyle = BorderStyle.FixedSingle;
-            dudSaidaQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dudSaidaQuantidade.Location = new Point(21, 116);
-            dudSaidaQuantidade.Name = "dudSaidaQuantidade";
-            dudSaidaQuantidade.Size = new Size(295, 24);
-            dudSaidaQuantidade.TabIndex = 17;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(20, 31);
-            label4.Name = "label4";
-            label4.Size = new Size(23, 16);
-            label4.TabIndex = 20;
-            label4.Text = "ID";
-            // 
-            // btnTrocaCancelar
-            // 
-            btnTrocaCancelar.Font = new Font("Geometr212 BkCn BT", 9F);
-            btnTrocaCancelar.Location = new Point(337, 120);
-            btnTrocaCancelar.Name = "btnTrocaCancelar";
-            btnTrocaCancelar.Size = new Size(182, 23);
-            btnTrocaCancelar.TabIndex = 29;
-            btnTrocaCancelar.Text = "Cancelar";
-            btnTrocaCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnTrocaAtualizar
-            // 
-            btnTrocaAtualizar.Font = new Font("Geometr212 BkCn BT", 9F);
-            btnTrocaAtualizar.Location = new Point(337, 91);
-            btnTrocaAtualizar.Name = "btnTrocaAtualizar";
-            btnTrocaAtualizar.Size = new Size(182, 23);
-            btnTrocaAtualizar.TabIndex = 28;
-            btnTrocaAtualizar.Text = "Atualizar";
-            btnTrocaAtualizar.UseVisualStyleBackColor = true;
-            // 
-            // txtTrocaId
-            // 
-            txtTrocaId.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtTrocaId.Location = new Point(22, 50);
-            txtTrocaId.Name = "txtTrocaId";
-            txtTrocaId.Size = new Size(65, 24);
-            txtTrocaId.TabIndex = 24;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            label5.Location = new Point(22, 98);
-            label5.Name = "label5";
-            label5.Size = new Size(166, 16);
-            label5.TabIndex = 33;
-            label5.Text = "Quantidade a ser trocada";
-            label5.TextAlign = ContentAlignment.MiddleRight;
-            // 
-            // txtTrocaCodBar
-            // 
-            txtTrocaCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtTrocaCodBar.Location = new Point(93, 50);
-            txtTrocaCodBar.Name = "txtTrocaCodBar";
-            txtTrocaCodBar.Size = new Size(123, 24);
-            txtTrocaCodBar.TabIndex = 25;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            label6.Location = new Point(222, 32);
-            label6.Name = "label6";
-            label6.Size = new Size(115, 16);
-            label6.TabIndex = 32;
-            label6.Text = "Nome do Produto";
-            // 
-            // txtTrocaNome
-            // 
-            txtTrocaNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtTrocaNome.Location = new Point(222, 51);
-            txtTrocaNome.Name = "txtTrocaNome";
-            txtTrocaNome.Size = new Size(297, 24);
-            txtTrocaNome.TabIndex = 26;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(93, 32);
-            label7.Name = "label7";
-            label7.Size = new Size(82, 16);
-            label7.TabIndex = 31;
-            label7.Text = "Cód. Barras";
-            // 
-            // dudTrocaQuantidade
-            // 
-            dudTrocaQuantidade.BorderStyle = BorderStyle.FixedSingle;
-            dudTrocaQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dudTrocaQuantidade.Location = new Point(23, 117);
-            dudTrocaQuantidade.Name = "dudTrocaQuantidade";
-            dudTrocaQuantidade.Size = new Size(295, 24);
-            dudTrocaQuantidade.TabIndex = 27;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(22, 32);
-            label8.Name = "label8";
-            label8.Size = new Size(23, 16);
-            label8.TabIndex = 30;
-            label8.Text = "ID";
             // 
             // btnPerdaCancelar
             // 
@@ -501,6 +433,16 @@
             btnPerdaAtualizar.Text = "Atualizar";
             btnPerdaAtualizar.UseVisualStyleBackColor = true;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(23, 34);
+            label12.Name = "label12";
+            label12.Size = new Size(23, 16);
+            label12.TabIndex = 40;
+            label12.Text = "ID";
+            // 
             // txtPerdaId
             // 
             txtPerdaId.Font = new Font("Geometr212 BkCn BT", 9.75F);
@@ -508,6 +450,15 @@
             txtPerdaId.Name = "txtPerdaId";
             txtPerdaId.Size = new Size(65, 24);
             txtPerdaId.TabIndex = 34;
+            // 
+            // dudPerdaQuantidade
+            // 
+            dudPerdaQuantidade.BorderStyle = BorderStyle.FixedSingle;
+            dudPerdaQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dudPerdaQuantidade.Location = new Point(24, 119);
+            dudPerdaQuantidade.Name = "dudPerdaQuantidade";
+            dudPerdaQuantidade.Size = new Size(295, 24);
+            dudPerdaQuantidade.TabIndex = 37;
             // 
             // label9
             // 
@@ -520,6 +471,16 @@
             label9.Text = "Quantidade a ser retirada do estoque";
             label9.TextAlign = ContentAlignment.MiddleRight;
             // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(94, 34);
+            label11.Name = "label11";
+            label11.Size = new Size(82, 16);
+            label11.TabIndex = 41;
+            label11.Text = "Cód. Barras";
+            // 
             // txtPerdaCodBar
             // 
             txtPerdaCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F);
@@ -527,6 +488,14 @@
             txtPerdaCodBar.Name = "txtPerdaCodBar";
             txtPerdaCodBar.Size = new Size(123, 24);
             txtPerdaCodBar.TabIndex = 35;
+            // 
+            // txtPerdaNome
+            // 
+            txtPerdaNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtPerdaNome.Location = new Point(223, 53);
+            txtPerdaNome.Name = "txtPerdaNome";
+            txtPerdaNome.Size = new Size(297, 24);
+            txtPerdaNome.TabIndex = 36;
             // 
             // label10
             // 
@@ -538,88 +507,119 @@
             label10.TabIndex = 42;
             label10.Text = "Nome do Produto";
             // 
-            // txtPerdaNome
+            // Troca
             // 
-            txtPerdaNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
-            txtPerdaNome.Location = new Point(223, 53);
-            txtPerdaNome.Name = "txtPerdaNome";
-            txtPerdaNome.Size = new Size(297, 24);
-            txtPerdaNome.TabIndex = 36;
+            Troca.BackColor = Color.SteelBlue;
+            Troca.Controls.Add(btnTrocaCancelar);
+            Troca.Controls.Add(btnTrocaAtualizar);
+            Troca.Controls.Add(label8);
+            Troca.Controls.Add(txtTrocaId);
+            Troca.Controls.Add(dudTrocaQuantidade);
+            Troca.Controls.Add(label5);
+            Troca.Controls.Add(label7);
+            Troca.Controls.Add(txtTrocaCodBar);
+            Troca.Controls.Add(txtTrocaNome);
+            Troca.Controls.Add(label6);
+            Troca.Location = new Point(4, 25);
+            Troca.Name = "Troca";
+            Troca.Padding = new Padding(3);
+            Troca.Size = new Size(540, 173);
+            Troca.TabIndex = 3;
+            Troca.Text = "Troca";
             // 
-            // label11
+            // btnTrocaCancelar
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(94, 34);
-            label11.Name = "label11";
-            label11.Size = new Size(82, 16);
-            label11.TabIndex = 41;
-            label11.Text = "Cód. Barras";
+            btnTrocaCancelar.Font = new Font("Geometr212 BkCn BT", 9F);
+            btnTrocaCancelar.Location = new Point(337, 120);
+            btnTrocaCancelar.Name = "btnTrocaCancelar";
+            btnTrocaCancelar.Size = new Size(182, 23);
+            btnTrocaCancelar.TabIndex = 29;
+            btnTrocaCancelar.Text = "Cancelar";
+            btnTrocaCancelar.UseVisualStyleBackColor = true;
             // 
-            // dudPerdaQuantidade
+            // btnTrocaAtualizar
             // 
-            dudPerdaQuantidade.BorderStyle = BorderStyle.FixedSingle;
-            dudPerdaQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dudPerdaQuantidade.Location = new Point(24, 119);
-            dudPerdaQuantidade.Name = "dudPerdaQuantidade";
-            dudPerdaQuantidade.Size = new Size(295, 24);
-            dudPerdaQuantidade.TabIndex = 37;
+            btnTrocaAtualizar.Font = new Font("Geometr212 BkCn BT", 9F);
+            btnTrocaAtualizar.Location = new Point(337, 91);
+            btnTrocaAtualizar.Name = "btnTrocaAtualizar";
+            btnTrocaAtualizar.Size = new Size(182, 23);
+            btnTrocaAtualizar.TabIndex = 28;
+            btnTrocaAtualizar.Text = "Atualizar";
+            btnTrocaAtualizar.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // label8
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(23, 34);
-            label12.Name = "label12";
-            label12.Size = new Size(23, 16);
-            label12.TabIndex = 40;
-            label12.Text = "ID";
+            label8.AutoSize = true;
+            label8.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(22, 32);
+            label8.Name = "label8";
+            label8.Size = new Size(23, 16);
+            label8.TabIndex = 30;
+            label8.Text = "ID";
             // 
-            // clnId
+            // txtTrocaId
             // 
-            clnId.Frozen = true;
-            clnId.HeaderText = "ID";
-            clnId.Name = "clnId";
-            clnId.ReadOnly = true;
-            clnId.Width = 40;
+            txtTrocaId.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtTrocaId.Location = new Point(22, 50);
+            txtTrocaId.Name = "txtTrocaId";
+            txtTrocaId.Size = new Size(65, 24);
+            txtTrocaId.TabIndex = 24;
             // 
-            // clnCodBar
+            // dudTrocaQuantidade
             // 
-            clnCodBar.Frozen = true;
-            clnCodBar.HeaderText = "Cód. Barras";
-            clnCodBar.Name = "clnCodBar";
-            clnCodBar.ReadOnly = true;
+            dudTrocaQuantidade.BorderStyle = BorderStyle.FixedSingle;
+            dudTrocaQuantidade.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dudTrocaQuantidade.Location = new Point(23, 117);
+            dudTrocaQuantidade.Name = "dudTrocaQuantidade";
+            dudTrocaQuantidade.Size = new Size(295, 24);
+            dudTrocaQuantidade.TabIndex = 27;
             // 
-            // clnNome
+            // label5
             // 
-            clnNome.Frozen = true;
-            clnNome.HeaderText = "Nome";
-            clnNome.Name = "clnNome";
-            clnNome.ReadOnly = true;
-            clnNome.Width = 125;
+            label5.AutoSize = true;
+            label5.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            label5.Location = new Point(22, 98);
+            label5.Name = "label5";
+            label5.Size = new Size(166, 16);
+            label5.TabIndex = 33;
+            label5.Text = "Quantidade a ser trocada";
+            label5.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // clnQuantidade
+            // label7
             // 
-            clnQuantidade.Frozen = true;
-            clnQuantidade.HeaderText = "Quantidade";
-            clnQuantidade.Name = "clnQuantidade";
-            clnQuantidade.ReadOnly = true;
-            clnQuantidade.Width = 90;
+            label7.AutoSize = true;
+            label7.Font = new Font("Geometr212 BkCn BT", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(93, 32);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 16);
+            label7.TabIndex = 31;
+            label7.Text = "Cód. Barras";
             // 
-            // clnEstoqueMin
+            // txtTrocaCodBar
             // 
-            clnEstoqueMin.Frozen = true;
-            clnEstoqueMin.HeaderText = "Estoque Mínimo";
-            clnEstoqueMin.Name = "clnEstoqueMin";
-            clnEstoqueMin.ReadOnly = true;
-            clnEstoqueMin.Width = 90;
+            txtTrocaCodBar.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtTrocaCodBar.Location = new Point(93, 50);
+            txtTrocaCodBar.Name = "txtTrocaCodBar";
+            txtTrocaCodBar.Size = new Size(123, 24);
+            txtTrocaCodBar.TabIndex = 25;
             // 
-            // clnUltimaMovimentacao
+            // txtTrocaNome
             // 
-            clnUltimaMovimentacao.Frozen = true;
-            clnUltimaMovimentacao.HeaderText = "Última Movimentação";
-            clnUltimaMovimentacao.Name = "clnUltimaMovimentacao";
-            clnUltimaMovimentacao.ReadOnly = true;
+            txtTrocaNome.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            txtTrocaNome.Location = new Point(222, 51);
+            txtTrocaNome.Name = "txtTrocaNome";
+            txtTrocaNome.Size = new Size(297, 24);
+            txtTrocaNome.TabIndex = 26;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Geometr212 BkCn BT", 9.75F);
+            label6.Location = new Point(222, 32);
+            label6.Name = "label6";
+            label6.Size = new Size(115, 16);
+            label6.TabIndex = 32;
+            label6.Text = "Nome do Produto";
             // 
             // FrmEstoque
             // 
