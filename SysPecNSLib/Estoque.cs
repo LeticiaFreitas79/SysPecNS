@@ -9,26 +9,23 @@ namespace SysPecNSLib
 {
     public class Estoque
     {
-        public int Id { get; set; }
-        public Produto produto { get; set; }
-        public string? Quantidade { get; set; }
+        public Produto Produto { get; set; }
+        public double? Quantidade { get; set; }
         public DateTime? UltimaMovimentacao {  get; set; }
 
         //Todos os campos da tabela 'estoque'.
-        public Estoque(int id, Produto produto, string? quantidade, DateTime? ultimamovimentacao)
+        public Estoque(Produto produto, double? quantidade, DateTime? ultimamovimentacao)
         {
-            Id = id;
             Produto = produto;
             Quantidade = quantidade;
             UltimaMovimentacao = ultimamovimentacao;
         }
 
-        //Campos da tabela 'estoque', sem o campo Id.
-        public Estoque(Produto produto, string? quantidade, DateTime? ultimamovimentacao)
+        //Campos da tabela 'estoque', sem o campo 'UltimaMovimentacao'
+        public Estoque(Produto produto, double? quantidade)
         {
             Produto = produto;
             Quantidade = quantidade;
-            UltimaMovimentacao = ultimamovimentacao;
         }
 
         //Nenhum campo da tabela 'estoque'.
@@ -44,7 +41,7 @@ namespace SysPecNSLib
             cmd.CommandType = CommandType.StoredProcedure; //Permite o use das StoredProcedures existentes no Banco de Dados.
             cmd.CommandText = "sp_estoque_insert"; //Chama a Stored Procedure referente a função a ser executada.
             //As linhas abaixo associam os campos no Banco de Dados com os campos do Formulário.
-            cmd.Parameters.AddWithValue("id", Id);
+           
             cmd.Parameters.AddWithValue("quantidade", Quantidade);
             cmd.Parameters.AddWithValue("UltimaMovimentacao", UltimaMovimentacao);
             var dr = cmd.ExecuteReader(); //Executa a função.
@@ -80,10 +77,9 @@ namespace SysPecNSLib
             if (dr.Read())
             {
                 estoque = new(
-                    dr.GetInt32(0), //ID
-                    dr.GetString(1), //Nome
-                    dr.GetString(3), //Quantidade
-                    dr.GetDateTime(4) //UltimaMovimentacao
+                    Produto.ObterPorId(dr.GetInt32(0)), //Produto
+                    dr.GetDouble(1), //Quantidade
+                    dr.GetDateTime(2) //UltimaMovimentacao
                     );
             }
             cmd.Connection.Close();
@@ -113,7 +109,6 @@ namespace SysPecNSLib
             var cmd = Banco.Abrir(); //Chama o Banco de Dados.
             cmd.CommandType = CommandType.StoredProcedure; //Permite o uso da StoredProcedure.
             cmd.CommandText = "sp_estoque_update"; //Chama a StoreProcedure.
-            cmd.Parameters.AddWithValue("sp_produto_id", Id);
             cmd.Parameters.AddWithValue("sp_produto", Produto);
             cmd.Parameters.AddWithValue("sp_quantidade", Quantidade);
             cmd.Parameters.AddWithValue("sp_data_ultimo_movimento", UltimaMovimentacao);
