@@ -101,6 +101,7 @@
             dgvEstoqueProdutos.RowHeadersVisible = false;
             dgvEstoqueProdutos.Size = new Size(548, 150);
             dgvEstoqueProdutos.TabIndex = 0;
+            dgvEstoqueProdutos.CellContentClick += dgvEstoqueProdutos_CellContentClick;
             // 
             // txtEntradaId
             // 
@@ -186,6 +187,7 @@
             btnEntradaAtualizar.TabIndex = 6;
             btnEntradaAtualizar.Text = "Atualizar";
             btnEntradaAtualizar.UseVisualStyleBackColor = true;
+            btnEntradaAtualizar.Click += btnEntradaAtualizar_Click;
             // 
             // btnEntradaCancelar
             // 
