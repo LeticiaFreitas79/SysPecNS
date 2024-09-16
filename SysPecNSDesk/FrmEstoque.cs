@@ -21,5 +21,15 @@ namespace SysPecNSDesk
         {
 
         }
+
+        private void FrmEstoque_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dudQuantidade_SelectedItemChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
