@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             dgvEstoqueProdutos = new DataGridView();
+            clnId = new DataGridViewTextBoxColumn();
+            clnCodBar = new DataGridViewTextBoxColumn();
+            clnNome = new DataGridViewTextBoxColumn();
+            clnQuantidade = new DataGridViewTextBoxColumn();
+            clnEstoqueMin = new DataGridViewTextBoxColumn();
+            clnUltimaMovimentacao = new DataGridViewTextBoxColumn();
             btnEntrada = new Button();
             txtId = new TextBox();
             txtCodBar = new TextBox();
@@ -46,12 +52,6 @@
             btnSaida = new Button();
             btnTroca = new Button();
             btnPerda = new Button();
-            clnId = new DataGridViewTextBoxColumn();
-            clnCodBar = new DataGridViewTextBoxColumn();
-            clnNome = new DataGridViewTextBoxColumn();
-            clnQuantidade = new DataGridViewTextBoxColumn();
-            clnEstoqueMin = new DataGridViewTextBoxColumn();
-            clnUltimaMovimentacao = new DataGridViewTextBoxColumn();
             btnAtualizar = new Button();
             btnCancelar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).BeginInit();
@@ -71,6 +71,52 @@
             dgvEstoqueProdutos.RowHeadersVisible = false;
             dgvEstoqueProdutos.Size = new Size(534, 150);
             dgvEstoqueProdutos.TabIndex = 0;
+            // 
+            // clnId
+            // 
+            clnId.Frozen = true;
+            clnId.HeaderText = "ID";
+            clnId.Name = "clnId";
+            clnId.ReadOnly = true;
+            clnId.Width = 40;
+            // 
+            // clnCodBar
+            // 
+            clnCodBar.Frozen = true;
+            clnCodBar.HeaderText = "Cód. Barras";
+            clnCodBar.Name = "clnCodBar";
+            clnCodBar.ReadOnly = true;
+            // 
+            // clnNome
+            // 
+            clnNome.Frozen = true;
+            clnNome.HeaderText = "Nome";
+            clnNome.Name = "clnNome";
+            clnNome.ReadOnly = true;
+            // 
+            // clnQuantidade
+            // 
+            clnQuantidade.Frozen = true;
+            clnQuantidade.HeaderText = "Quantidade";
+            clnQuantidade.Name = "clnQuantidade";
+            clnQuantidade.ReadOnly = true;
+            clnQuantidade.Width = 90;
+            // 
+            // clnEstoqueMin
+            // 
+            clnEstoqueMin.Frozen = true;
+            clnEstoqueMin.HeaderText = "Estoque Mínimo";
+            clnEstoqueMin.Name = "clnEstoqueMin";
+            clnEstoqueMin.ReadOnly = true;
+            clnEstoqueMin.Width = 80;
+            // 
+            // clnUltimaMovimentacao
+            // 
+            clnUltimaMovimentacao.Frozen = true;
+            clnUltimaMovimentacao.HeaderText = "Última Movimentação";
+            clnUltimaMovimentacao.Name = "clnUltimaMovimentacao";
+            clnUltimaMovimentacao.ReadOnly = true;
+            clnUltimaMovimentacao.Width = 120;
             // 
             // btnEntrada
             // 
@@ -252,52 +298,6 @@
             btnPerda.Text = "Perda";
             btnPerda.UseVisualStyleBackColor = false;
             // 
-            // clnId
-            // 
-            clnId.Frozen = true;
-            clnId.HeaderText = "ID";
-            clnId.Name = "clnId";
-            clnId.ReadOnly = true;
-            clnId.Width = 40;
-            // 
-            // clnCodBar
-            // 
-            clnCodBar.Frozen = true;
-            clnCodBar.HeaderText = "Cód. Barras";
-            clnCodBar.Name = "clnCodBar";
-            clnCodBar.ReadOnly = true;
-            // 
-            // clnNome
-            // 
-            clnNome.Frozen = true;
-            clnNome.HeaderText = "Nome";
-            clnNome.Name = "clnNome";
-            clnNome.ReadOnly = true;
-            // 
-            // clnQuantidade
-            // 
-            clnQuantidade.Frozen = true;
-            clnQuantidade.HeaderText = "Quantidade";
-            clnQuantidade.Name = "clnQuantidade";
-            clnQuantidade.ReadOnly = true;
-            clnQuantidade.Width = 90;
-            // 
-            // clnEstoqueMin
-            // 
-            clnEstoqueMin.Frozen = true;
-            clnEstoqueMin.HeaderText = "Estoque Mínimo";
-            clnEstoqueMin.Name = "clnEstoqueMin";
-            clnEstoqueMin.ReadOnly = true;
-            clnEstoqueMin.Width = 80;
-            // 
-            // clnUltimaMovimentacao
-            // 
-            clnUltimaMovimentacao.Frozen = true;
-            clnUltimaMovimentacao.HeaderText = "Última Movimentação";
-            clnUltimaMovimentacao.Name = "clnUltimaMovimentacao";
-            clnUltimaMovimentacao.ReadOnly = true;
-            clnUltimaMovimentacao.Width = 120;
-            // 
             // btnAtualizar
             // 
             btnAtualizar.Location = new Point(72, 469);
@@ -321,7 +321,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSlateGray;
-            ClientSize = new Size(599, 523);
+            ClientSize = new Size(1032, 523);
             Controls.Add(btnCancelar);
             Controls.Add(btnAtualizar);
             Controls.Add(btnPerda);
